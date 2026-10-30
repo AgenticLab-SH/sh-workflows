@@ -51,3 +51,7 @@ Report confirmed project root, saved files inspected, evidence, modifications (i
 
 The task or operator's rules take precedence over this generic skill. In monitored environments, never capture a screen, use browser/desktop automation, send prompts/files out, modify approval or runtime settings, install extra AI, or update the provided agent to circumvent restrictions. Prefer the official built-in preview and human observation.
 
+
+## Git 표시는 저장 상태의 증명이 아님
+
+U/M 등 표시는 Git의 미추적·수정 상태일 수 있다. 제공 에디터의 저장 여부와 실제 디스크 파일을 기준으로 판단한다. git diff가 비어 있어도 신규 파일이나 잘못된 작업 루트를 확인해야 할 수 있다. 검사·실행은 현재 정책에서 허용한 범위만 수행한다.

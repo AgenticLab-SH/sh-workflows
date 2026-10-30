@@ -5,6 +5,10 @@ AI와 함께 **문제 정의 → 구현 → 근거 확인 → 제출 → 직접 
 
 **독립 준비 자료 / 36개 선택형 스킬 / Python 표준 라이브러리 도구 / 선택형 로컬 MCP 6개 도구.** 이 복원·보강본의 테스트, 빌드, 실행 및 Cofa 환경 검증은 **미실행(NOT_RUN)**입니다.
 
+## 시험 핵심 자료
+
+**[시험 핵심 운영서](docs/EXAM_CORE.md)**에서 시작하세요. Notion의 2차 학습 18개와 관련 정본·연구자료까지 총 22개를 읽고 질문·구현·근거·제출·설명으로 다시 연결했습니다. [반영 범위](docs/NOTION_COVERAGE.md)와 [통합 모의 3종](docs/MOCK_EXAMS.md)을 함께 제공합니다.
+
 ## 지금 필요한 것부터
 
 | 상황 | 읽을 자료 |
@@ -15,7 +19,7 @@ AI와 함께 **문제 정의 → 구현 → 근거 확인 → 제출 → 직접 
 | 웹 IDE 화면을 AI가 못 봄 | [저장 파일·터미널 연결](docs/WEB_IDE_TERMINAL_ONLY.md) |
 | 터미널 명령이 낯섦 | [명령표](docs/TERMINAL_CHEATSHEET.md) |
 | Skill을 어떻게 가져오는지 모름 | [가져오기·선택](docs/IMPORT_AND_SELECT_SKILLS.md) |
-| 직접 문제를 풀며 연습하고 싶음 | [6개 실전 훈련](docs/PRACTICE_COFA.md) |
+| 직접 문제를 풀며 연습하고 싶음 | [통합 모의 3종](docs/MOCK_EXAMS.md) · [짧은 훈련 6묶음](docs/PRACTICE_COFA.md) |
 | 마지막 설명을 준비함 | [후속 설명 연습](docs/NO_AI_REHEARSAL.md) — 실제 AI 금지 단계에서는 사용하지 않음 |
 | 다운로드가 필요함 | [릴리스](https://github.com/AgenticLab-SH/ai-hackathon-prep-kit/releases) — 전체 소스·개별 Skill ZIP |
 | 무엇을 읽고 보강했는지 알고 싶음 | [요구사항 반영표](docs/SOURCE_RECONCILIATION.md), [복원 한계](RECOVERY.md) |
@@ -37,6 +41,8 @@ AI와 함께 **문제 정의 → 구현 → 근거 확인 → 제출 → 직접 
     화면·미저장 버퍼를 봤다고 추정하지 말고, Browser는 내가 직접 확인한다.
 
 하위 폴더를 Clone했다고 Skill이 자동 발견·등록되지는 않습니다. 경로를 지정해 필요한 본문만 읽히면 됩니다. 전역 설정·기존 AGENTS.md 덮어쓰기·버전 업데이트는 필요하지 않습니다.
+
+방문 신청·고객 문의·합계 수리 모의는 모두 합성 자료입니다. 합계 수리 폴더에는 **의도적으로 오류가 있는 연습 코드**가 있으며 실무 도구나 실제 시험 답안으로 사용하지 않습니다.
 
 ## 제공하는 도구와 선택 기준
 

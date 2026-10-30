@@ -44,3 +44,13 @@ description: Run a time-boxed AI hackathon task from ambiguous brief to minimal 
 ## 보고
 
 구현한 필수 기능, 실제 수정 파일, 관측한 근거, NOT_RUN, 미완료와 다음 행동을 짧게 적는다. 소스 작성·실행·제출 완료를 같은 상태로 보고하지 않는다.
+
+## Notion 심화 자료 선택
+
+전체 소스 안에서만 아래 문서 경로를 사용한다. 개별 Skill ZIP만 있을 때는 이 본문의 독립 흐름으로 진행하고 없는 참고 문서를 찾느라 멈추지 않는다.
+
+- 처음 배우는 참가자: ../../../docs/EXAM_CORE.md
+- 담당자 답이 구현을 바꿔야 할 때: ../../../docs/STAKEHOLDER_QUESTIONS.md
+- 단계별 작은 지시: ../../../docs/DELEGATION_PROMPTS.md
+- 근거 수준·저장·오류: ../../../docs/EVIDENCE_AND_RECOVERY.md
+- 제출과 최종 완료 구분: ../../../docs/SUBMISSION_AND_INCIDENTS.md

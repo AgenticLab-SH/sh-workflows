@@ -1,0 +1,9 @@
+request_id,visitor,visit_date,people,session
+V001,PERSON_A,2026-11-10,3,morning
+V002,PERSON_B,2026-11-10,4,morning
+V003,PERSON_C,2026-11-10,5,morning
+V004,PERSON_D,2026-11-10,6,morning
+V005,PERSON_E,,2,morning
+V006,PERSON_F,2026-11-10,2,afternoon
+V006,PERSON_G,2026-11-10,3,afternoon
+V007,PERSON_H,2026-11-10,,afternoon

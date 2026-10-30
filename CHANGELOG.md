@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.4.0 - 2026-10-31
+
+- Read the current returned Notion study corpus: two hubs, 18 lessons, research notes and the related planning item.
+- Added a core study handbook, stakeholder question ladder, delegation prompts, architecture/evidence/submission guides and research interpretation.
+- Added three synthetic practice dossiers for visitor review, support triage and summary repair; the repair script is intentionally incorrect training code.
+- Added requirement-to-evidence, incident and submission-state worksheets; linked existing Skills without increasing the 36-Skill count.
+- Distinguished historical GitHub/test claims, Git modification markers and actual saved-file evidence.
+- Verification NOT_RUN. No real assessment data, original attachment copies, automatic CI, live Cofa use or Notion mutation.
+
 ## 0.3.0 - 2026-10-31
 
 - Renamed the repository and MCP identity to ai-hackathon-prep-kit.
