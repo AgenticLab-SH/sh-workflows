@@ -86,7 +86,7 @@ def handle(request):
     if method == 'initialize':
         return {'jsonrpc':'2.0','id':mid,'result':{
             'protocolVersion':'2025-03-26', 'capabilities':{'tools':{}},
-            'serverInfo':{'name':'ai-workflow-open-kit','version':'0.2.0'},
+            'serverInfo':{'name':'ai-hackathon-prep-kit','version':'0.3.0'},
             'instructions':'Read-only offline tools; do not use in restricted environments unless permitted.'}}
     if method == 'ping':
         return {'jsonrpc':'2.0','id':mid,'result':{}}

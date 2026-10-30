@@ -83,7 +83,7 @@ class MCPSmokeTest(unittest.TestCase):
         self.assertEqual(p.returncode,0,p.stderr)
         lines=[json.loads(x) for x in p.stdout.splitlines()]
         self.assertEqual(len(lines),4)
-        self.assertEqual(lines[0]['result']['serverInfo']['name'],'ai-workflow-open-kit')
+        self.assertEqual(lines[0]['result']['serverInfo']['name'],'ai-hackathon-prep-kit')
         self.assertEqual(len(lines[1]['result']['tools']),6)
         self.assertIn('row_count',lines[2]['result']['content'][0]['text'])
         self.assertTrue(lines[3]['result']['isError'])

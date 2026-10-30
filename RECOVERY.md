@@ -1,5 +1,25 @@
-# Source recovery
+# 복원·보강 출처와 한계
 
-Reconstructed as data from readable toolkit-generation messages. Original shell commands, subprocesses, tests, network requests and deletion code were not executed. Source reconstruction is not the original ZIP or Git history. Do not apply the historical commit or 25-test result to this copy.
+## 회수한 것과 회수하지 못한 것
 
-Tests, builds, lint, type checks, browser/runtime QA and Cofa use: NOT_RUN. Optional automatic CI was omitted. Publish only this generic toolkit; exclude private conversation, candidate links, email, credentials and machine configuration. Remote publication remains separate.
+기존 툴킷은 보관된 대화의 읽을 수 있는 생성 메시지에서 데이터로 복원했습니다. 원 생성 shell·subprocess·삭제·테스트·네트워크 코드를 실행해서 복원한 것이 아닙니다. 원 ZIP, 원 Git 이력과 첨부 원바이트를 회수한 것은 아닙니다.
+
+이번 보강은 보관본의 사용자 22개 요청과 최종 답변 23개를 순서대로 읽고 게시본의 문서·Skill·도구와 대조했습니다. 전체 도구 이벤트를 새로 실행하거나 개인 Notion을 복제하지 않았습니다.
+
+## 읽기 한계
+
+- 보관본 수집 시각은 2026-10-30이며 그 이후 웹 대화 변경을 확인한 것이 아닙니다.
+- 원첨부 5개는 기존 file_http_403 상태를 유지했습니다. PDF·TXT 원본을 읽었다고 주장하지 않습니다.
+- 현재 등록된 대화 조회 경로는 오프라인이어서 최신 웹 branch를 새로 가져오지 못했습니다. 기존 보관 대화를 사용했습니다.
+- 영상 타임스탬프·해설은 보관된 사용자 본문과 답변에서 읽었습니다. 영상을 새로 재생하거나 긴 원문을 공개하지 않았습니다.
+- 메일 본문에서 직접 읽은 사실과 과거 답변의 첨부 가이드 해설을 docs/COFA_2026_BRIEF.md에 분리했습니다.
+
+## 게시·패키지·검증은 별개
+
+현재 Public 저장소는 ai-hackathon-prep-kit입니다. 과거 ai-workflow-open-kit 이름으로 게시한 이력을 보존하며 이름을 변경했습니다.
+
+새 개별 Skill ZIP과 전체 소스 ZIP은 현재 복원·보강 소스를 패키징한 파일입니다. 원첨부 재다운로드나 과거 원번들 복원이 아닙니다.
+
+**Tests / build / lint / type checks / runtime / browser QA / Cofa use: NOT_RUN.** 과거 18/18·25/25와 과거 커밋 표시는 현재 복원본의 결과가 아닙니다. 자동 CI도 추가하지 않았습니다.
+
+공개 자료에는 개인 대화 전문·개인 응시 링크·메일 전문·인증정보·개인 PC 설정을 포함하지 않습니다.

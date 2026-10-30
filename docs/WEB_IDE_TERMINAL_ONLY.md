@@ -43,7 +43,7 @@ python3 tools/workspace_probe.py --root . inventory --depth 2 --limit 80
 python3 tools/workspace_probe.py --root . fingerprint README.md
 ```
 
-If cloned as a nested `ai-workflow-open-kit/` folder, invoke `python3 ai-workflow-open-kit/tools/workspace_probe.py --root . inventory --depth 2 --limit 80` from the **task root**. The script path and the root to inspect are two different concepts.
+If cloned as a nested `ai-hackathon-prep-kit/` folder, invoke `python3 ai-hackathon-prep-kit/tools/workspace_probe.py --root . inventory --depth 2 --limit 80` from the **task root**. The script path and the root to inspect are two different concepts.
 
 `workspace_probe.py` scans names/sizes in bounded depth and can hash one saved file. It never reads editor pixels, executes project code, modifies files or calls an outbound API. It skips hidden credentials, symlinks and heavy dependency directories. It is optional; do not install Python if the restricted environment does not provide it.
 

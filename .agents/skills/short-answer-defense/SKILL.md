@@ -5,6 +5,8 @@ description: Practice evidence-based short written defenses of an AI-assisted de
 
 # 5분 결과물 설명
 
+This is preparation-only. During an actual no-AI follow-up phase, do not ask questions, draft answers, produce notes, or call tools. Resume coaching only in an authorized practice context.
+
 ## Workflow
 1. Read only the user-supplied completed work summary, not hypothetical success claims.
 2. Ask one specific question about the artifact, requirement, design, verification, risks, or limitation.

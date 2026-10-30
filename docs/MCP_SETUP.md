@@ -9,9 +9,9 @@ A **generic** MCP host configuration example, not an instruction to modify a res
 ```json
 {
   "mcpServers": {
-    "ai-workflow-open-kit": {
+    "ai-hackathon-prep-kit": {
       "command": "python3",
-      "args": ["/absolute/path/to/ai-workflow-open-kit/tools/mcp_stdio_server.py"],
+      "args": ["/absolute/path/to/ai-hackathon-prep-kit/tools/mcp_stdio_server.py"],
       "env": {"MCP_ALLOWED_ROOT": "/absolute/path/to/safe/workspace"}
     }
   }

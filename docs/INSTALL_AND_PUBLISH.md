@@ -1,38 +1,23 @@
-# Install and publish this independent repository
+# 가져오기·패키지·게시 상태
 
-## Local testing (outside a restricted exam)
+현재 저장소: https://github.com/AgenticLab-SH/ai-hackathon-prep-kit
 
-```bash
-python3 --version
-python3 -m unittest discover -s tests -v
-python3 tools/audit_csv.py examples/applications.csv --required id,date,people --unique id
-```
+## 평가 환경에서 사용
 
-Use individual skills from `.agents/skills/<skill-name>/SKILL.md`. For a browser-hosted IDE, see `docs/WEB_IDE_TERMINAL_ONLY.md` and prefer one relevant Skill at a time. Some Codex versions discover repository-local `.agents/skills` automatically, but that behavior depends on the host and its policy. A Git clone **does not guarantee** automatic activation.
+[가져오기·선택](IMPORT_AND_SELECT_SKILLS.md)을 따릅니다. 공개 Clone이 허용될 때 참고 폴더로 가져오고 필요한 Skill만 읽습니다. 개인 인증, Git Push, Codex 업데이트가 필요하지 않습니다.
 
-## Publish a **new empty public repository** (only if the owner approves)
+## 개인 준비 환경의 다운로드
 
-1. In your GitHub account, create **one new public repository** named `ai-workflow-open-kit`, with **no README/license/gitignore added by GitHub** (already bundled here).
-2. Outside any monitored test environment, extract the full source archive and run:
+[릴리스](https://github.com/AgenticLab-SH/ai-hackathon-prep-kit/releases)에는 전체 소스 ZIP, 개별 Skill ZIP 묶음, 각 Skill ZIP을 제공합니다. 새로 패키징한 파일이며 원 대화의 ZIP·Git 번들을 회수한 것은 아닙니다. ZIP 생성은 동작 검증이 아닙니다.
 
-```bash
-git init -b main
-git add README.md LICENSE AGENTS.md CONTRIBUTING.md .gitignore .agents docs examples tests tools
-git commit -m "Add offline-first public workflow skills and validation tools"
-git remote add origin https://github.com/YOUR_ACCOUNT/ai-workflow-open-kit.git
-git push -u origin main
-```
+개별 Skill ZIP은 루트의 SKILL.md와 agents/openai.yaml을 포함합니다. 소스 전체 ZIP을 단일 Skill로 등록하지 않습니다. 실제 업로드/발견 지원은 사용 환경의 공식 UI에 따릅니다.
 
-3. Verify the repository is marked **Public**, and that the `.agents/skills` folder, `tools/` files and tests are visible to a signed-out visitor. Keep your authentication private. When used under a particular contest policy, maintain public visibility for the entire operator-required period.
+## 소유자 개발 환경에서 후속 게시
 
-### Alternative: Git bundle
+이 절은 시험 환경 밖의 저장소 소유자용입니다. 기존 저장소와 이력을 보존하고 새 커밋을 게시합니다. 다른 프로젝트를 이 저장소로 덮어쓰거나 강제 Push하지 않습니다. 시험 규칙상 공개 유지 기간이 있다면 그 기간 동안 Public을 유지합니다.
 
-If a `.bundle` file is available, clone it to recover the original initial commit and point `origin` to the *empty* new repository. Do not push a bundle into an existing unrelated project.
+원본 Git 번들은 회수하지 못했습니다. 현재 게시 이력은 GitHub에서 Clone할 수 있으나 이를 과거 원번들 복원이라고 부르지 않습니다.
 
-## What is not automatic
+## 현재 한계
 
-- No integration with private ChatGPT or personal Codex skills.
-- No guarantee the test runner or exam Cofa environment permits cloning, MCP setup, or advanced Codex commands.
-- No hosted MCP endpoint, tokens or external service.
-- No publication until a verified GitHub repository and commit exist.
-
+복원·보강본은 테스트·빌드·린트·타입·실행·브라우저·Cofa 사용 검증을 수행하지 않았습니다. 과거 대화에 나온 테스트 통과 수치를 현재 릴리스에 붙이지 않습니다. 자동 검사 workflow는 포함하지 않습니다.

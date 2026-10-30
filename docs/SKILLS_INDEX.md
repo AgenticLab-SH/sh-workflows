@@ -1,3 +1,11 @@
+# 해커톤 시작 Skill
+
+36개 중 먼저 hackathon-task-driver를 읽고, 현재 과제에 필요한 아래 Skill 1~2개만 추가로 선택합니다. 기존 35개 Skill은 보존했습니다.
+
+| Skill | 용도 |
+| --- | --- |
+| [hackathon-task-driver](../.agents/skills/hackathon-task-driver/SKILL.md) | 제공 IDE에서 요구 파악·최소 구현·허용된 증거·제출 준비를 연결 |
+
 # Skills index
 
 Select one or two relevant skills; current host rules take priority.

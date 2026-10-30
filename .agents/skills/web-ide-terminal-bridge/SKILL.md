@@ -30,7 +30,7 @@ Treat the **saved files on the shared worktree** as the source of truth for the 
    python3 tools/workspace_probe.py --root . fingerprint README.md
    ```
 
-   If the public kit is a **nested** folder under a separate task workspace, run `python3 ai-workflow-open-kit/tools/workspace_probe.py --root . inventory --depth 2 --limit 80` from the **task root**. Do not accidentally inspect the toolkit folder instead of the task files.
+   If the public kit is a **nested** folder under a separate task workspace, run `python3 ai-hackathon-prep-kit/tools/workspace_probe.py --root . inventory --depth 2 --limit 80` from the **task root**. Do not accidentally inspect the toolkit folder instead of the task files.
 
    Its default output has only file names, sizes and hashes; there is **no screenshot, desktop control, network upload, or file modification**.
 4. Identify task entry points from actual README/package metadata. Ask the agent for a concise mapping: requirement -> file/function -> proposed test. Stop if the workspace is not shared or permissions are unclear; ask the candidate to check the official UI rather than inventing access.
