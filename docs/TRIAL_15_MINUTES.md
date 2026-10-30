@@ -13,6 +13,10 @@
 | 11~13분 | 업무 담당자와 Helper 역할 확인, 여유가 있을 때만 Skill/MCP 메뉴 | 지원·허용·사용 가능을 각각 기록 |
 | 13~15분 | 안내에 따른 제출 미리보기·확정·종료 동선 | 어디서 파일이 고정되는지, 완료 표시 |
 
+## One-command environment scan (optional)
+
+If Python 3 is available and local inspection is permitted, the public kit now contains a **read-only** [quick preflight](QUICK_PREFLIGHT.md): `python3 .hackathon-kit/tools/quick_preflight.py --root .` after an allowed Clone. Public GitHub reachability is an explicit option; no output is ever uploaded. This does not inspect the Proctor, unsaved editor buffers, Browser or hidden settings. Skip it if the official trial is short or restrictions are unclear.
+
 ## 남은 시간이 부족하면
 
 고급 기능·외부 패키지·MCP 설치 탐색을 먼저 생략합니다. 감독 연결, 저장 파일, 제공 Codex, 제출 동선을 우선합니다. Codex 업데이트·숨은 기능 활성화·개인 파일 반입을 시도하지 않습니다.

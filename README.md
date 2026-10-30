@@ -16,6 +16,8 @@ AI와 함께 **문제 정의 → 구현 → 근거 확인 → 제출 → 직접 
 | 시험 당일 5분만 읽을 때 | **[당일 한 장 운영표](docs/EXAM_DAY_FAST_PATH.md)** |
 | 처음이며 무엇을 준비해야 할지 모름 | [학습 순서](docs/LEARNING_PATH.md) → [2026 Cofa 준비 기준](docs/COFA_2026_BRIEF.md) |
 | 15분 사전 체험 직전 | [15분 점검표](docs/TRIAL_15_MINUTES.md) |
+| 허용된 저장 작업폴더에서 기본 도구를 한 번에 읽기 전용 확인 | [한 명령 안전 점검](docs/QUICK_PREFLIGHT.md) · `tools/quick_preflight.py` |
+| 내 개인 Codex 홈을 그대로 가져오고 싶음 | [안전한 Skill 선별 반입](docs/SAFE_CODEX_HOME_SELECTION.md) (홈 전체 복사 금지) |
 | 허용된 과제 작업 시작 | [180분 실전 운영](docs/HACKATHON_RUNBOOK.md) → [첫 지시문](docs/CLI_READY_PROMPTS.md) |
 | 웹 IDE 화면을 AI가 못 봄 | [저장 파일·터미널 연결](docs/WEB_IDE_TERMINAL_ONLY.md) |
 | 터미널 명령이 낯섦 | [명령표](docs/TERMINAL_CHEATSHEET.md) |

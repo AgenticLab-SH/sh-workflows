@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.4.2 - 2026-10-31 (main, no release ZIP regenerated)
+
+- Added bounded offline-by-default `quick_preflight.py`: project markers, local tool presence, optional read-only fixed-public GitHub access, optional protected saved-file hash.
+- Added seven isolated synthetic tests and a provenance-bounded test result; full historical suite and Cofa runtime remain NOT_RUN.
+- Added guidance against copying private Codex home and against uploading monitored exam diagnostics or outputs. No Git Push or screenshot functionality included.
+
 ## 0.4.1 - 2026-10-31 (main branch; release ZIP not yet regenerated)
 
 - Added reference-submission-review Skill to detect accidental inclusion of cloned public reference files in an assignment submission.
