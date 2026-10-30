@@ -1,0 +1,3 @@
+interface:
+  display_name: "문서·인수인계"
+  short_description: "Create concise README files, setup guides, release notes, and engineering handoffs grounded in "

@@ -1,0 +1,3 @@
+interface:
+  display_name: "백엔드 API 구현"
+  short_description: "Design small backend services and APIs with clear request schemas, validation, errors, and repr"

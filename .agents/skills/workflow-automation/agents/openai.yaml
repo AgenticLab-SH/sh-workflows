@@ -1,0 +1,3 @@
+interface:
+  display_name: "로컬 업무 자동화"
+  short_description: "Automate repeatable file and data workflows with bounded local scripts and explicit approvals, "

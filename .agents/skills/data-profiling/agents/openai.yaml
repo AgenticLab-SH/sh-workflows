@@ -1,0 +1,3 @@
+interface:
+  display_name: "데이터 품질 진단"
+  short_description: "Profile CSV and JSON data for schema, duplicates, missingness, type errors, and unit consistenc"

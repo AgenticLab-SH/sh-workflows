@@ -1,0 +1,3 @@
+interface:
+  display_name: "계산·단위 재검증"
+  short_description: "Recompute quantities, percentages, boundary conditions, and units from supplied facts; use when"

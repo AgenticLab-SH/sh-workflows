@@ -1,0 +1,3 @@
+interface:
+  display_name: "목표 기반 반복 구현"
+  short_description: "Use explicit goals, acceptance checks, constraints, and stop conditions during iterative engine"

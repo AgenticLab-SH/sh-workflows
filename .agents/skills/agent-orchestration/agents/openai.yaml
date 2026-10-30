@@ -1,0 +1,3 @@
+interface:
+  display_name: "병렬 에이전트 협업"
+  short_description: "Plan bounded multi-agent collaboration with one write owner and independent read-only reviews; "

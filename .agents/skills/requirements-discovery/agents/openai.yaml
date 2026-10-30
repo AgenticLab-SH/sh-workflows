@@ -1,0 +1,3 @@
+interface:
+  display_name: "요구사항 발견"
+  short_description: "Turn ambiguous stakeholder requests into scoped, testable requirements; use before implementati"

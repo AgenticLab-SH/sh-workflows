@@ -1,0 +1,4 @@
+interface:
+  display_name: "Web IDE Terminal Bridge"
+  short_description: "Inspect saved project files when the coding agent cannot see the editor"
+

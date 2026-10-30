@@ -1,0 +1,3 @@
+interface:
+  display_name: "문서·규정 충돌 분석"
+  short_description: "Compare multiple versions of rules or documents and detect precedence conflicts; use for applic"

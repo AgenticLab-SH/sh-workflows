@@ -1,0 +1,3 @@
+interface:
+  display_name: "실무 데이터 분석"
+  short_description: "Analyze small datasets with grounded aggregations and reproducible reasoning; use for business "

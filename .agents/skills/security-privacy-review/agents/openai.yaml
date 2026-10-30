@@ -1,0 +1,3 @@
+interface:
+  display_name: "보안·개인정보 검토"
+  short_description: "Review software and documents for data exposure, permission errors, insecure defaults, prompt i"

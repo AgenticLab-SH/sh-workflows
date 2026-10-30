@@ -1,0 +1,3 @@
+interface:
+  display_name: "시스템 구조 설명"
+  short_description: "Explain an implemented architecture, data flow, tradeoffs, risks, and dependencies to technical"

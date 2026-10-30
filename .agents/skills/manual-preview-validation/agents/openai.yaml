@@ -1,0 +1,4 @@
+interface:
+  display_name: "Manual Browser Preview Validation"
+  short_description: "Validate runtime behavior without screenshots or GUI automation"
+

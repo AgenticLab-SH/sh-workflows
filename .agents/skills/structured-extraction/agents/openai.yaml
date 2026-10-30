@@ -1,0 +1,3 @@
+interface:
+  display_name: "문서 필드 추출"
+  short_description: "Extract fields, tables, rules, entities, and deadlines from provided unstructured documents wit"

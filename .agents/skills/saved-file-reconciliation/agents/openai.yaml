@@ -1,0 +1,4 @@
+interface:
+  display_name: "Saved File Reconciliation"
+  short_description: "Safely resolve editor, disk and coding agent file state conflicts"
+
