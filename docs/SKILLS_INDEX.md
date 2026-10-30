@@ -1,10 +1,11 @@
 # 해커톤 시작 Skill
 
-36개 중 먼저 hackathon-task-driver를 읽고, 현재 과제에 필요한 아래 Skill 1~2개만 추가로 선택합니다. 기존 35개 Skill은 보존했습니다.
+37개 중 먼저 hackathon-task-driver를 읽고, 현재 과제에 필요한 아래 Skill 1~2개만 추가로 선택합니다. 기존 35개 Skill은 보존했습니다.
 
 | Skill | 용도 |
 | --- | --- |
 | [hackathon-task-driver](../.agents/skills/hackathon-task-driver/SKILL.md) | 제공 IDE에서 요구 파악·최소 구현·허용된 증거·제출 준비를 연결 |
+| [reference-submission-review](../.agents/skills/reference-submission-review/SKILL.md) | 공개 참고 키트와 필수 제출 파일의 경계·미리보기 확인 |
 
 # Skills index
 
@@ -36,6 +37,7 @@ Select one or two relevant skills; current host rules take priority.
 | project-time-budget | Plan and manage time-boxed engineering work with explicit checkpoints and submission buffer without assuming an official scoring model. |
 | prompt-engineering | Design and improve precise AI prompts for unfamiliar tasks; use for goal clarification, constrained outputs, iteration, and verifiable prompts. |
 | requirements-discovery | Turn ambiguous stakeholder requests into scoped, testable requirements; use before implementation when success criteria or business rules are unclear. |
+| reference-submission-review | Identify reference toolkit and synthetic files separately from required task artifacts before submission. |
 | research-evidence | Research unfamiliar domains and compare evidence quality; use for source synthesis, fact checking, uncertainty tracking, and reference-grounded notes. |
 | saved-file-reconciliation | Diagnose disagreement between a browser editor, terminal, and coding agent after files are edited or saved. Use when a file does not appear, an external-change warning appears, an unsaved buffer is suspected, or an agent's edit seems missing. |
 | security-privacy-review | Review software and documents for data exposure, permission errors, insecure defaults, prompt injection, and accidental outbound transfers. |

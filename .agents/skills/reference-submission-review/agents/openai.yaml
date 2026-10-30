@@ -1,0 +1,4 @@
+interface:
+  display_name: "Reference Submission Review"
+  short_description: "Distinguish reference toolkits from real deliverables before submission"
+  default_prompt: "Use $reference-submission-review to inspect which saved files belong to the task and which are only reference materials."

@@ -4,6 +4,8 @@
 
     git clone --depth 1 https://github.com/AgenticLab-SH/ai-hackathon-prep-kit.git .hackathon-kit
 
+**주의:** 이 `.hackathon-kit` 폴더가 플랫폼 제출 후보에 포함되지 않는지 자동 보장되지 않습니다. [참고 키트/제출 경계](REFERENCE_SUBMISSION_BOUNDARY.md)에서 실제 제출 미리보기 확인 절차를 먼저 읽으세요.
+
 목적지는 참고용 하위 폴더입니다. 기존 프로젝트·README·AGENTS.md·.agents 디렉터리를 덮어쓰지 않습니다. 과제 루트와 키트 루트를 각각 알아둡니다.
 
 Codex에 다음과 같이 **정확한 본문 경로를 읽도록** 요청하면 자동 탐색 여부를 추측할 필요가 없습니다.
@@ -24,9 +26,10 @@ Codex에 다음과 같이 **정확한 본문 경로를 읽도록** 요청하면 
 | 오류 원인 조사 | debugging-verification |
 | Browser를 AI가 볼 수 없음 | manual-preview-validation |
 | 제출 구조·실행법 정리 | documentation-handoff |
+| Clone한 키트가 제출 대상에 포함될 수 있음 | reference-submission-review |
 | 사전 설명 연습 | short-answer-defense — 실제 no-AI 단계에서는 사용 금지 |
 
-처음에는 진행 Skill과 현재 필요한 Skill 1개면 충분합니다. 36개를 전부 읽히거나 설치하는 것은 권장하지 않습니다.
+처음에는 진행 Skill과 현재 필요한 Skill 1개면 충분합니다. 37개를 전부 읽히거나 설치하는 것은 권장하지 않습니다.
 
 ## 개별 ZIP은 언제 사용하는가
 

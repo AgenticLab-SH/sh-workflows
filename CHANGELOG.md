@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.4.1 - 2026-10-31 (main branch; release ZIP not yet regenerated)
+
+- Added reference-submission-review Skill to detect accidental inclusion of cloned public reference files in an assignment submission.
+- Added an exam-day one-page operating card and a reference-versus-submission checklist.
+- Corrected tool documentation for the existing six read-only MCP methods and workspace inspector.
+- Static content review and standalone Skill packaging performed; full repository tests and live Cofa integration remain NOT_RUN.
+
 ## 0.4.0 - 2026-10-31
 
 - Read the current returned Notion study corpus: two hubs, 18 lessons, research notes and the related planning item.

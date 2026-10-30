@@ -1,6 +1,7 @@
 # AI Hackathon Prep Kit contributor and task guidance
 
 - This is a preparation/reference repository. Distinguish the real task root from the cloned kit folder; do not replace the task README, instructions, existing skills, or submission files.
+- A cloned public toolkit is reference-only; a hidden `.hackathon-kit` folder is not guaranteed to be excluded from official submissions. Inspect and confirm the official preview, preserve task files, and never silently delete reference contents.
 - Begin a time-boxed hackathon with .agents/skills/hackathon-task-driver/SKILL.md. Load only task-relevant additional skills.
 - The participant owns problem definition, business decisions, scope and final explanation; the provided coding agent owns only the delegated implementation.
 - Separate stakeholder questions, implementation requests, platform help, and incident reporting. Keep requirements, assumptions, decisions, and actual execution evidence distinct.
