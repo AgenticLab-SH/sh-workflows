@@ -1,5 +1,7 @@
 # Reusable prompts / 재사용 프롬프트
 
+실제 맥락을 먼저 전달하고 시작할 때는 [통합 시작 프롬프트](../START_PROMPT.md)를 우선한다. 아래 템플릿은 필요한 부분만 선택하며 이미 답한 내용은 다시 묻지 않는다.
+
 For terminal-only agents and browser-hosted IDEs, see [CLI-ready prompts](CLI_READY_PROMPTS.md) and [the saved-file bridge](WEB_IDE_TERMINAL_ONLY.md).
 
 All templates are **general study materials**. Replace placeholders with facts from the current authorized task. Never inject exam prompts or confidential data into a separate AI service.
