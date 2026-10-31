@@ -324,6 +324,6 @@ Python 3.10+가 이미 제공될 때 표준 라이브러리만 사용합니다. 
 - 준비 자료 작성·패키징·GitHub 게시와 실제 학습·체험·시험 환경 작동은 별개입니다.
 - 과거 대화의 18/18·25/25 통과 주장이나 원 Git 커밋은 이 복원본의 검증 결과가 아닙니다. [RECOVERY.md](RECOVERY.md)를 참고합니다.
 
-**릴리스 참고:** v0.4.0 ZIP은 36개 Skill 기준입니다. v0.5.0 산출물(전체 소스 ZIP, 41개 개별 Skill ZIP과 그 묶음)은 같은 형식으로 준비했으며, [릴리스](https://github.com/AgenticLab-SH/sh-workflows/releases) 페이지에 v0.5.0이 보이기 전에는 최신 main을 사용하세요. 개별 Skill ZIP은 루트에 SKILL.md와 agents/openai.yaml만 담고, 다른 문서를 참조하는 줄은 전체 소스가 있을 때만 쓰입니다.
+**릴리스 참고:** v0.4.0 ZIP은 36개 Skill 기준입니다. [v0.5.0 릴리스](https://github.com/AgenticLab-SH/sh-workflows/releases/tag/v0.5.0)에 전체 소스 ZIP, 41개 개별 Skill ZIP과 그 묶음, SHA256SUMS.txt를 게시했습니다. 이후 main에 더해진 변경은 릴리스 ZIP에 없으니 최신 내용은 main을 사용하세요. 개별 Skill ZIP은 루트에 SKILL.md와 agents/openai.yaml만 담고, 다른 문서를 참조하는 줄은 전체 소스가 있을 때만 쓰입니다.
 
 MIT License. SK하이닉스·크래프톤·Cofa·OpenAI가 보증하거나 운영하는 저장소가 아닙니다.
