@@ -1,11 +1,12 @@
-# AI 해커톤 실전 준비 키트
-# AI Hackathon Prep Kit
+# SH Workflows
 
 AI와 함께 **문제 정의 → 구현 → 근거 확인 → 제출 → 직접 설명**을 연습하고 수행하기 위한 해커톤 준비 저장소입니다. SK하이닉스 AI 해커톤 2026의 Cofa Probe 2차 준비 내용을 출발점으로 삼았습니다. 일반 채용전형 준비와는 별개이며, 특정 대회의 답안이나 공식 배포물이 아닙니다.
 
-**독립 준비 자료 / 37개 선택형 스킬 / Python 표준 라이브러리 도구 / 선택형 로컬 MCP 6개 도구.** 이 복원·보강본의 테스트, 빌드, 실행 및 Cofa 환경 검증은 **미실행(NOT_RUN)**입니다.
+**독립 준비 자료 / 37개 선택형 스킬 / Python 표준 라이브러리 도구 / 선택형 로컬 MCP 6개 도구.** 검증 범위는 [최종 준비 검증 기록](docs/FINAL_PREP_VALIDATION.md)을 참고하세요. 실제 Cofa 환경은 **NOT_RUN**입니다.
 
 ## 시험 핵심 자료
+
+**[10가지 한 페이지 판단 카드](docs/DECISION_CARD.md)** · [업무별 합성 흐름 6종](docs/BUSINESS_WORKFLOWS.md)
 
 **[시험 핵심 운영서](docs/EXAM_CORE.md)**에서 시작하세요. Notion의 2차 학습 18개와 관련 정본·연구자료까지 총 22개를 읽고 질문·구현·근거·제출·설명으로 다시 연결했습니다. [반영 범위](docs/NOTION_COVERAGE.md)와 [통합 모의 3종](docs/MOCK_EXAMS.md)을 함께 제공합니다.
 
@@ -25,14 +26,14 @@ AI와 함께 **문제 정의 → 구현 → 근거 확인 → 제출 → 직접 
 | 공개 참고 키트가 제출에 섞일까 걱정됨 | [참고/제출 경계](docs/REFERENCE_SUBMISSION_BOUNDARY.md) |
 | 직접 문제를 풀며 연습하고 싶음 | [통합 모의 3종](docs/MOCK_EXAMS.md) · [짧은 훈련 6묶음](docs/PRACTICE_COFA.md) |
 | 마지막 설명을 준비함 | [후속 설명 연습](docs/NO_AI_REHEARSAL.md) — 실제 AI 금지 단계에서는 사용하지 않음 |
-| 다운로드가 필요함 | [릴리스](https://github.com/AgenticLab-SH/ai-hackathon-prep-kit/releases) — 전체 소스·개별 Skill ZIP |
+| 다운로드가 필요함 | [릴리스](https://github.com/AgenticLab-SH/sh-workflows/releases) — 전체 소스·개별 Skill ZIP |
 | 무엇을 읽고 보강했는지 알고 싶음 | [요구사항 반영표](docs/SOURCE_RECONCILIATION.md), [복원 한계](RECOVERY.md) |
 
 ## 가져온 뒤 첫 지시
 
 공개 자료 반입이 허용된 작업 환경에서만 실행합니다. 실제 과제 폴더를 공개 저장소로 바꾸거나 이 저장소에 답안을 작성하지 않습니다.
 
-    git clone --depth 1 https://github.com/AgenticLab-SH/ai-hackathon-prep-kit.git .hackathon-kit
+    git clone --depth 1 https://github.com/AgenticLab-SH/sh-workflows.git .hackathon-kit
 
 제공 Codex에 다음처럼 요청합니다.
 

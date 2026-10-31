@@ -55,7 +55,7 @@ class ReadinessTest(unittest.TestCase):
         self.assertEqual(result["status"], "PASS")
         self.assertEqual(len(calls), 1)
         self.assertEqual(calls[0][0][1], "ls-remote")
-        self.assertIn("ai-hackathon-prep-kit", calls[0][0][2])
+        self.assertIn("sh-workflows", calls[0][0][2])
         self.assertEqual(calls[0][1]["timeout"], 5)
         self.assertEqual(calls[0][1]["env"]["GIT_TERMINAL_PROMPT"], "0")
         self.assertNotIn("SECRET", json.dumps(result))
@@ -66,22 +66,22 @@ class ReadinessTest(unittest.TestCase):
             attempts.append(1)
             raise subprocess.TimeoutExpired("git", 5)
         r = public_git_readiness(run=delayed, which=lambda _: "/usr/bin/git")
-        self.assertEqual(r["status"], "TIMEOUT")
+        self.assertEqual(r["status"], "BLOCKED")
         self.assertEqual(len(attempts), 1)
 
     def test_missing_git_never_calls_network(self):
         r = public_git_readiness(run=lambda *a, **kw: self.fail("network"), which=lambda _: None)
-        self.assertEqual(r["status"], "NOT_FOUND")
+        self.assertEqual(r["status"], "FAIL")
 
     def test_saved_file_invalid_without_workspace_probe(self):
         with patch.dict(sys.modules, {"workspace_probe": None}):
             out = saved_fingerprint(self.root, "README.md")
-        self.assertEqual(out["status"], "NOT_AVAILABLE")
+        self.assertEqual(out["status"], "NOT_RUN")
 
     def test_python_binary_and_cli(self):
-        with patch("quick_preflight.tool_presence", return_value={k:{"status":"NOT_FOUND"} for k in ("git","codex","node","npm")}):
+        with patch("quick_preflight.tool_presence", return_value={k:{"status":"FAIL"} for k in ("git","codex","node","npm")}):
             report = generate(self.root)
-        self.assertEqual(report["binaries"]["codex"]["status"], "NOT_FOUND")
+        self.assertEqual(report["binaries"]["codex"]["status"], "FAIL")
         self.assertEqual(main(["--root", str(self.root), "--format", "json"]), 0)
 
 

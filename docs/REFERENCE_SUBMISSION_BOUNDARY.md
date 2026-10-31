@@ -4,7 +4,7 @@
 
 ## 왜 중요한가
 
-`git clone --depth 1 https://github.com/AgenticLab-SH/ai-hackathon-prep-kit.git .hackathon-kit`은 공개 키트를 <b>작업 폴더 아래</b>에 복제하는 예시일 뿐입니다. 일부 자동 수집·제출 방식에서는 `.hackathon-kit` 같은 **숨김 폴더도 제출 후보에 포함될 수 있습니다**. Git의 `.gitignore` 또는 폴더 이름이 `.`로 시작한다는 사실만으로 자동 제외를 보장할 수 없습니다.
+`git clone --depth 1 https://github.com/AgenticLab-SH/sh-workflows.git .hackathon-kit`은 공개 키트를 <b>작업 폴더 아래</b>에 복제하는 예시일 뿐입니다. 일부 자동 수집·제출 방식에서는 `.hackathon-kit` 같은 **숨김 폴더도 제출 후보에 포함될 수 있습니다**. Git의 `.gitignore` 또는 폴더 이름이 `.`로 시작한다는 사실만으로 자동 제외를 보장할 수 없습니다.
 
 따라서 기본 구분은 다음과 같습니다.
 

@@ -54,3 +54,14 @@ description: Run a time-boxed AI hackathon task from ambiguous brief to minimal 
 - 단계별 작은 지시: ../../../docs/DELEGATION_PROMPTS.md
 - 근거 수준·저장·오류: ../../../docs/EVIDENCE_AND_RECOVERY.md
 - 제출과 최종 완료 구분: ../../../docs/SUBMISSION_AND_INCIDENTS.md
+
+## 단계별 짧은 기억 보조
+시작 시 사용자·목표·필수 기능·규정·산출물·설계·제외·핵심 테스트·완료 기준을 한 줄씩 고정한다.
+질문은 기존 stakeholder-interview의 2~3개→답변→공백 재평가를 따른다.
+설계는 workflow-automation으로 유지/수정/조합/재설계를 고르고 반복업무 ROI의 가정과 실측을 구분한다.
+구현은 사용자 목표→작은 위임→실제 결과→사용자 판단→다음 위임 순서로 한다.
+방향이 바뀔 때만 이유를 알리고, 필요한 파일만 읽으며 같은 실패를 반복하지 않는다.
+완료 기능마다 요구→파일/함수→입력/처리/출력→선택 이유→실행 테스트→한계를 짧게 설명한다.
+전체 소스가 있으면 ../../../docs/DECISION_CARD.md를 사람이 참고한다. 매 턴 전체 체크리스트를 출력하지 않는다.
+Technique(작동), Intent(의도), Cognition(이해)은 일반 평가 관점이며 이번 시험의 공식 배점표가 아니다.
+AI 금지 단계에는 이 기억 보조를 포함한 AI 지원을 중단한다.

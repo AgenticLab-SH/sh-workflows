@@ -2,7 +2,7 @@
 
 | 자료 URL·버전/커밋 | 사용 목적 | 실제 사용 파일·범위 | 수정 내용 | 라이선스 |
 | --- | --- | --- | --- | --- |
-| https://github.com/AgenticLab-SH/ai-hackathon-prep-kit | 선택형 작업 절차 | | | MIT |
+| https://github.com/AgenticLab-SH/sh-workflows | 선택형 작업 절차 | | | MIT |
 
 구현 전체를 외부 완성품으로 대체하지 않습니다.
 실제 사용한 자료만 기록합니다. 공개 유지가 요구되면 정해진 기간을 지킵니다.

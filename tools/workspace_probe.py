@@ -52,7 +52,7 @@ def _allowed_file(root: Path, rel: str) -> Path:
     source = Path(rel)
     if source.is_absolute() or any(x in ('..', '') for x in source.parts):
         raise WorkspaceError('only paths within workspace root are permitted')
-    if any(_secret(x) or x in SKIP_DIRS for x in source.parts):
+    if any(x.startswith('.') or x.lower() == 'auth.json' or _secret(x) or x in SKIP_DIRS for x in source.parts):
         raise WorkspaceError('sensitive or excluded paths cannot be inspected')
     p = (root / source).resolve(strict=True)
     if not p.is_relative_to(root):
@@ -109,7 +109,7 @@ def workspace_inventory(root: str | Path, depth: int = 2,
             continue
         for entry in children:
             name = entry.name
-            if name in SKIP_DIRS or _secret(name) or name.startswith('.env'):
+            if name.startswith('.') or name.lower() == 'auth.json' or name in SKIP_DIRS or _secret(name):
                 excluded += 1
                 continue
             try:

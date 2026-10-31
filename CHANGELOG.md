@@ -44,3 +44,10 @@
 - Added bounded file access, synthetic fixtures, safe-use and publication guidance, scenario playbooks and unit tests.
 - No external services, secrets, hosted endpoints, public repository creation, or exam-platform integrations are bundled.
 
+
+## 2026-10-31 final preparation
+- Public repository address renamed to sh-workflows; historical names and release artifacts retained.
+- Reused 37 skills; improved adaptive stakeholder questions, workflow choice/ROI and task-driver reminders.
+- Added decision card, six synthetic business workflows, source index and concrete trial commands.
+- Standardized preflight statuses, redacted unavailable-root errors and blocked hidden/auth fingerprint targets.
+- Local synthetic suite: 35 passed. Cofa and real assessment use: NOT_RUN.

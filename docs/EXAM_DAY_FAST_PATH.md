@@ -50,3 +50,5 @@
 - 공개 GitHub Clone 실패: 공개 자료는 선택 사항. 문제·서버·계정 제한 우회에 시간을 쓰지 않고 기본 Codex로 과제를 계속.
 
 **읽을 범위:** [시험 핵심 운영서](EXAM_CORE.md) / [실전 지시문](CLI_READY_PROMPTS.md) / [제출 체크](../templates/PRE_SUBMISSION.md). 실제 10/31 추가 공지가 새 조건을 제시하면 이 계획보다 최신 공지가 우선.
+
+빠른 판단은 [10가지 한 페이지 카드](DECISION_CARD.md)를 참고한다.

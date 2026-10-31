@@ -2,7 +2,7 @@
 
 ## 제공 환경에서 공개 Clone이 허용될 때
 
-    git clone --depth 1 https://github.com/AgenticLab-SH/ai-hackathon-prep-kit.git .hackathon-kit
+    git clone --depth 1 https://github.com/AgenticLab-SH/sh-workflows.git .hackathon-kit
 
 **주의:** 이 `.hackathon-kit` 폴더가 플랫폼 제출 후보에 포함되지 않는지 자동 보장되지 않습니다. [참고 키트/제출 경계](REFERENCE_SUBMISSION_BOUNDARY.md)에서 실제 제출 미리보기 확인 절차를 먼저 읽으세요.
 
@@ -33,7 +33,7 @@ Codex에 다음과 같이 **정확한 본문 경로를 읽도록** 요청하면 
 
 ## 개별 ZIP은 언제 사용하는가
 
-[릴리스](https://github.com/AgenticLab-SH/ai-hackathon-prep-kit/releases)의 Skill ZIP은 각각 SKILL.md가 ZIP 루트에 오는 독립 패키지입니다. 소스 전체 ZIP은 하나의 Skill이 아닙니다.
+[릴리스](https://github.com/AgenticLab-SH/sh-workflows/releases)의 Skill ZIP은 각각 SKILL.md가 ZIP 루트에 오는 독립 패키지입니다. 소스 전체 ZIP은 하나의 Skill이 아닙니다.
 
 개인 연습 환경에서 공식 업로드 UI가 제공하는 경우 해당 ZIP을 사용합니다. **Cofa에서 개인 파일 업로드가 허용된다는 뜻은 아닙니다.** 실제 평가에서는 제공된 공개 Clone 경로와 허용 절차를 우선합니다.
 

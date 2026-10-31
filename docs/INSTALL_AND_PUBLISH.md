@@ -1,6 +1,6 @@
 # 가져오기·패키지·게시 상태
 
-현재 저장소: https://github.com/AgenticLab-SH/ai-hackathon-prep-kit
+현재 저장소: https://github.com/AgenticLab-SH/sh-workflows
 
 ## 평가 환경에서 사용
 
@@ -8,7 +8,7 @@
 
 ## 개인 준비 환경의 다운로드
 
-[릴리스](https://github.com/AgenticLab-SH/ai-hackathon-prep-kit/releases)에는 전체 소스 ZIP, 개별 Skill ZIP 묶음, 각 Skill ZIP을 제공합니다. 새로 패키징한 파일이며 원 대화의 ZIP·Git 번들을 회수한 것은 아닙니다. ZIP 생성은 동작 검증이 아닙니다.
+[릴리스](https://github.com/AgenticLab-SH/sh-workflows/releases)에는 전체 소스 ZIP, 개별 Skill ZIP 묶음, 각 Skill ZIP을 제공합니다. 새로 패키징한 파일이며 원 대화의 ZIP·Git 번들을 회수한 것은 아닙니다. ZIP 생성은 동작 검증이 아닙니다.
 
 개별 Skill ZIP은 루트의 SKILL.md와 agents/openai.yaml을 포함합니다. 소스 전체 ZIP을 단일 Skill로 등록하지 않습니다. 실제 업로드/발견 지원은 사용 환경의 공식 UI에 따릅니다.
 

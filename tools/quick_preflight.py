@@ -15,8 +15,9 @@ import shutil
 import subprocess
 import sys
 from pathlib import Path
+sys.dont_write_bytecode = True
 
-PUBLIC_REPO = "https://github.com/AgenticLab-SH/ai-hackathon-prep-kit.git"
+PUBLIC_REPO = "https://github.com/AgenticLab-SH/sh-workflows.git"
 TOOLS = ("git", "codex", "node", "npm")
 MANUAL = (
     "Codex /status, /model, and optional Skill availability",
@@ -34,7 +35,7 @@ def root_dir(value: str) -> Path:
 
 
 def tool_presence(which=shutil.which) -> dict[str, dict[str, str]]:
-    return {name: {"status": "PRESENT" if which(name) else "NOT_FOUND"}
+    return {name: {"status": "PASS" if which(name) else "FAIL"}
             for name in TOOLS}
 
 
@@ -42,7 +43,7 @@ def public_git_readiness(run=subprocess.run, which=shutil.which) -> dict[str, st
     """One explicit public-only network read; no fallback or credential output."""
     git = which("git")
     if not git:
-        return {"status": "NOT_FOUND", "note": "Git binary absent"}
+        return {"status": "FAIL", "note": "Git binary absent"}
     env = dict(os.environ)
     env["GIT_TERMINAL_PROMPT"] = "0"
     try:
@@ -51,13 +52,13 @@ def public_git_readiness(run=subprocess.run, which=shutil.which) -> dict[str, st
                 stderr=subprocess.PIPE, text=True, timeout=5, env=env,
                 check=False)
     except subprocess.TimeoutExpired:
-        return {"status": "TIMEOUT", "note": "Public read timed out"}
+        return {"status": "BLOCKED", "note": "Public read timed out"}
     except (OSError, ValueError):
-        return {"status": "UNAVAILABLE", "note": "Git read could not start"}
+        return {"status": "BLOCKED", "note": "Git read could not start"}
     if p.returncode == 0 and re.fullmatch(r"[0-9a-f]{40,64}\s+HEAD\s*",
                                            p.stdout.strip()):
         return {"status": "PASS", "note": "Public repository reachable via Git"}
-    return {"status": "UNAVAILABLE", "note": "Public read did not succeed; no retry or bypass"}
+    return {"status": "BLOCKED", "note": "Public read did not succeed; no retry or bypass"}
 
 
 def safe_project_markers(root: Path) -> dict[str, object]:
@@ -68,8 +69,8 @@ def safe_project_markers(root: Path) -> dict[str, object]:
                and not (root / name).is_symlink()]
     skill = root / ".hackathon-kit" / ".agents" / "skills" / "hackathon-task-driver" / "SKILL.md"
     return {"marker_files": present,
-            "reference_kit": "PRESENT" if skill.is_file() and not skill.is_symlink()
-            else "NOT_FOUND_OR_NOT_CLONED"}
+            "reference_kit": "PASS" if skill.is_file() and not skill.is_symlink()
+            else "NOT_RUN"}
 
 
 def saved_fingerprint(root: Path, relative: str) -> dict[str, str]:
@@ -78,11 +79,11 @@ def saved_fingerprint(root: Path, relative: str) -> dict[str, str]:
     try:
         from workspace_probe import file_fingerprint, WorkspaceError
     except ImportError:
-        return {"status": "NOT_AVAILABLE", "note": "workspace_probe.py absent"}
+        return {"status": "NOT_RUN", "note": "workspace_probe.py absent"}
     try:
         info = file_fingerprint(root, relative)
     except (WorkspaceError, FileNotFoundError, OSError, ValueError):
-        return {"status": "BLOCKED_OR_MISSING", "note": "File not within allowed saved tree"}
+        return {"status": "BLOCKED", "note": "File not within allowed saved tree"}
     return {"status": "PASS", "relative_path": info["path"],
             "size_bytes": str(info["size_bytes"]),
             "sha256_prefix": info["sha256"][:12]}
@@ -95,6 +96,8 @@ def generate(root: Path, check_public_github: bool = False,
         "python": {"status": "PASS", "version": ".".join(map(str, sys.version_info[:3]))},
         "project": safe_project_markers(root),
         "binaries": tool_presence(),
+        "binary_versions": {"status": "NOT_RUN", "note": "No executable launched by default"},
+        "local_tests": {"status": "NOT_RUN", "note": "Use only task README test commands"},
         "public_github": ({"status": "NOT_RUN", "note": "Opt in only if current rules permit"}
                           if not check_public_github else public_git_readiness()),
         "saved_fingerprint": ({"status": "NOT_RUN"} if not file_path
@@ -110,12 +113,12 @@ def render(report: dict[str, object]) -> str:
     project = report["project"]
     binaries = report["binaries"]
     lines = ["=== Authorized Workspace Quick Check ===",
-             "Python: " + report["python"]["version"],
+             "Python: PASS " + report["python"]["version"],
              "Project markers: " + (", ".join(project["marker_files"]) or "none at this root"),
              "Public reference kit: " + project["reference_kit"]]
     for name in TOOLS:
         lines.append(f"{name}: {binaries[name]['status']}")
-    lines.extend(["Public GitHub read: " + report["public_github"]["status"],
+    lines.extend(["Binary versions / project tests: NOT_RUN (not executed)", "Public GitHub read: " + report["public_github"]["status"],
                   "Saved file hash: " + report["saved_fingerprint"]["status"]])
     if report["saved_fingerprint"]["status"] == "PASS":
         lines.append("Saved file SHA256 prefix: " + report["saved_fingerprint"]["sha256_prefix"])
@@ -137,7 +140,8 @@ def main(argv: list[str] | None = None) -> int:
     try:
         report = generate(root_dir(args.root), args.check_public_github, args.fingerprint)
     except (OSError, ValueError) as e:
-        p.error(str(e))
+        print("BLOCKED: requested project root is unavailable", file=sys.stderr)
+        return 2
     print(json.dumps(report, indent=2, ensure_ascii=True) if args.format == "json"
           else render(report))
     return 0

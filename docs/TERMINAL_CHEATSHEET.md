@@ -43,7 +43,7 @@ npm test, npm run build, python3 -m unittest 등은 **해당 프로젝트에 정
 
 ## 공개 키트 반입
 
-    git clone --depth 1 https://github.com/AgenticLab-SH/ai-hackathon-prep-kit.git .hackathon-kit
+    git clone --depth 1 https://github.com/AgenticLab-SH/sh-workflows.git .hackathon-kit
 
 과제 환경에서 Git Push, private 저장소 접근, 개인 인증 반입을 위한 로그인은 하지 않습니다. 공개 Clone 실패를 다른 계정·프록시·터널로 우회하지 말고 제공 도움말과 공식 문의를 사용합니다. 비파괴적인 오타·경로 수정은 정상 작업으로 처리합니다.
 

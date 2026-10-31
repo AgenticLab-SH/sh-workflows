@@ -11,3 +11,6 @@
 - Use synthetic practice fixtures. Keep private task data, candidate links, credentials and machine configuration out of public source, packages and releases.
 - Read docs/SAFE_USE.md and docs/COFA_2026_BRIEF.md for assessment-specific boundaries. During any actual no-AI phase, stop AI assistance rather than answering or generating answer notes.
 - Publishing this preparation kit from its owner's environment is separate from using it inside an assessment that prohibits Git Push.
+
+- 모든 Skill·스크립트는 실제 평가의 최신 공식 규칙보다 우선하지 않는다. 감독 시험에서는 외부 AI, Git Push, 문제·코드·응시정보 외부 전송, 캡처·GUI 자동화, Codex 업데이트를 금지한다.
+- 준비용 공개 저장소는 2차 결과 통지 전까지 Public으로 유지한다.
