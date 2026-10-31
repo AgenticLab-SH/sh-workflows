@@ -15,6 +15,28 @@ Codex가 이미 받은 내용을 다시 묻지 않고, 실제 규칙·파일·�
 키트 전체를 읽거나 원본 지침을 덮어쓰는 방식이 아닙니다. 아래의 개별 첫 지시는 이 시작 파일을 못 읽을 때의 대안입니다.
 이 파일이 없는 이전 Clone을 사용 중이면 자동으로 갱신되지 않습니다. 업데이트는 해당 환경의 공식 공개자료 반입 규칙을 따릅니다.
 
+## 고도화 경로: 다음 회차 빠른 경로
+
+여러 AI 해커톤 형식에 공통으로 쓸 수 있는 작업 패턴을 정리했습니다. 특정 과제의 내용·데이터·평가 기준은 이 저장소에 없습니다. 공식 규칙이 항상 우선합니다.
+
+| 상황 | 쓰는 자료 | 핵심 |
+| --- | --- | --- |
+| 작업 방식을 처음부터 고정하고 싶음 | [오버라이드 운영서](docs/OVERRIDE_INSTRUCTIONS.md) · [AGENTS.override 템플릿](templates/AGENTS.override.template.md) · [첫 메시지 블록](templates/PROMPT_OVERRIDE_BLOCK.md) | 허용될 때만 첫 작업 세션 전에 과제 루트에 AGENTS.override.md를 둔다. 제공 원본 AGENTS.md가 있으면 override 맨 위에 원본 전문을 그대로 붙이고(원본 파일은 그대로), override가 이미 있거나 복사가 애매하면 첫 메시지 블록을 쓴다 |
+| 담당자가 구체적인 질문에만 답함 | [stakeholder-agent-questioning](.agents/skills/stakeholder-agent-questioning/SKILL.md) · [멘트 템플릿](templates/QUESTION_MESSAGES.md) · [질문 원장](templates/QUESTION_LEDGER.csv) | 애매·경계·예외·차이를 한 사실짜리 질문으로 바꾼다(결과를 바꾸지 않는 질문은 빼고 P3는 가정으로 기록). 멘트는 Codex가 쓰고 나는 검토·복사·전송만 한다 |
+| 이용자와 운영자를 나눠야 함 | [role-separated-design](.agents/skills/role-separated-design/SKILL.md) · [역할 분리 패턴](docs/ROLE_SEPARATION.md) · [역할 매트릭스](templates/ROLE_MATRIX.md) | 역할별 화면·데이터·권한·흐름을 나누고 권한은 처리 함수에서 강제한다 |
+| 데이터를 가공하고 최적화 알고리즘을 골라야 함 | [optimization-modeling](.agents/skills/optimization-modeling/SKILL.md) · [최적화 운영서](docs/OPTIMIZATION_PLAYBOOK.md) · `tools/opt_kit.py` | 정제 로그→정식화 카드→기준선→개선→소규모 정확해 비교. 표준 라이브러리만으로 가능 |
+| 한도는 없지만 비용이 평가될 수 있음 | [cost-aware-execution](.agents/skills/cost-aware-execution/SKILL.md) · [비용 운영서](docs/COST_OPTIMIZATION.md) · [비용 기록](templates/COST_LOG.md) | 필요한 파일·Skill만 읽고 같은 실패를 반복하지 않는다. 필수 검증은 줄이지 않는다 |
+| 위 요소를 미리 연습 | [합성 모의 D: 문화센터 강좌 배정](exercises/session-allocation/BRIEF.md) · [합성 모의 E: 기부 물품 보관 상자 정리](exercises/donation-packing/BRIEF.md) | 진행자가 역할 카드로 구체 질문에만 답한다. D는 배정·역할 분리, E는 적재·묶음과 하한 비교 |
+
+공식 규칙이 참가자 지침 파일을 허용한다면, 맥락을 전달한 뒤 제공 Codex에 이렇게 요청할 수 있습니다.
+
+    .hackathon-kit/START_PROMPT.md를 읽고 적용해라. 0번 오버라이드 확인부터 한다.
+    담당자가 구체 질문에만 답하므로 애매한 점은 질문 원장에 올리고(결과를 바꾸지 않는 질문은 빼고 P3는 가정으로 기록) 복사용 멘트를 P0부터 써라.
+    역할이 둘 이상이면 역할 매트릭스, 최적화가 필요하면 정식화 카드를 먼저 보여라.
+    필요한 파일과 Skill만 읽고 기능마다 비용을 한 줄 기록해라.
+
+표의 용어 풀이: **P0~P3**는 질문 우선순위(P0 = 설계·데이터 모델을 바꿈, P3 = 표시 문구만 바꿈)입니다. **정식화 카드**는 무엇을 정하고(결정 변수), 무엇을 좋게 하며(목적), 무엇을 꼭 지키는지(제약)를 한 장에 적은 표입니다. **기준선**은 가장 단순한 방법의 결과, **정확해**는 작은 입력에서 모든 경우를 따져 구한 최선의 답, **gap**은 내 결과와 정확해의 차이입니다. **헝가리안**과 **최소비용 유량**은 배정 문제의 최선의 답을 구하는 표준 알고리즘입니다.
+
 ## 처음 사용하는 사람을 위한 기본 설명서
 
 **이 문서 하나를 위에서부터 읽으면 접속 후 준비부터 Codex 사용, 저장 확인, 제출 전 점검까지 따라갈 수 있습니다.** 아래 명령은 제공된 Linux 계열 터미널을 기준으로 합니다. 실제 시험 안내와 제공 환경이 항상 우선합니다.
@@ -122,13 +144,14 @@ Codex 대화 입력칸에 아래 내용을 넣으세요.
     과제 README와 허용된 저장 파일에서 목표, 필수 산출물, 제약을 파악해라.
     내가 결정해야 하는 핵심 질문 2~3개와 가장 작은 첫 구현을 제안해라.
     현업 정보가 부족하면 같은 skills 폴더의 stakeholder-interview/SKILL.md를 읽어라.
+    담당자가 구체 질문에만 답하면 stakeholder-agent-questioning/SKILL.md를 읽고 복사용 질문 멘트를 써라.
     자동화 흐름을 선택해야 하면 workflow-automation/SKILL.md를 읽어라.
     전체 키트를 읽거나 전역 설정과 기존 AGENTS.md를 덮어쓰지 마라.
     실제 저장 파일과 허용된 실행 결과만 근거로 보고해라.
     미실행은 NOT_RUN으로 남기고 Browser 화면은 내가 직접 확인한다.
 
 Clone했다고 Skill이 자동 등록되는 것은 아닙니다. 위처럼 경로를 알려 읽히면 됩니다.
-모든 37개 Skill을 한꺼번에 읽힐 필요는 없습니다.
+모든 41개 Skill을 한꺼번에 읽힐 필요는 없습니다.
 
 ### 7. 과제는 작은 단위로 진행하세요
 
@@ -211,9 +234,9 @@ Clone했다고 Skill이 자동 등록되는 것은 아닙니다. 위처럼 경�
 ### 12. 현재 상태와 더 읽을 자료
 
 - 공개 주소: https://github.com/AgenticLab-SH/sh-workflows
-- 37개 선택형 Skill, 로컬 읽기 도구, 합성 연습 자료가 있습니다.
-- 앞선 코드 보강본의 로컬 합성 테스트 35개는 통과했습니다. **실제 Cofa·감독·제출 환경은 NOT_RUN**입니다.
-- 이 초보자 안내 추가는 문서 변경입니다. 새로운 프로그램 설치·기능 개발은 하지 않았습니다.
+- 41개 선택형 Skill, 로컬 읽기 도구, 합성 연습 자료가 있습니다.
+- 로컬 합성 테스트 결과는 [CHANGELOG](CHANGELOG.md)의 최신 항목에 적습니다. **실제 Cofa·감독·제출 환경은 NOT_RUN**입니다.
+- 0.5.0에서 오버라이드·구체 질문·역할 분리·최적화·비용 자료와 표준 라이브러리 도구 5개(instruction_chain, question_candidates, question_ledger, opt_kit, context_budget)를 추가했습니다. 설치가 필요한 프로그램은 없습니다.
 - 최신 main을 사용하세요. 기존 v0.4.0 ZIP에는 최신 보강이 모두 들어 있지 않습니다.
 - 사용한 공개 저장소는 2차 결과 통지 전까지 Public으로 유지합니다.
 - 개인 Codex 홈·인증정보·세션·회사 내부자료·개인 시험 링크를 가져오거나 공개하지 않습니다.
@@ -224,19 +247,20 @@ Clone했다고 Skill이 자동 등록되는 것은 아닙니다. 위처럼 경�
 
 AI와 함께 **문제 정의 → 구현 → 근거 확인 → 제출 → 직접 설명**을 연습하고 수행하기 위한 해커톤 준비 저장소입니다. SK하이닉스 AI 해커톤 2026의 Cofa Probe 2차 준비 내용을 출발점으로 삼았습니다. 일반 채용전형 준비와는 별개이며, 특정 대회의 답안이나 공식 배포물이 아닙니다.
 
-**독립 준비 자료 / 37개 선택형 스킬 / Python 표준 라이브러리 도구 / 선택형 로컬 MCP 6개 도구.** 검증 범위는 [최종 준비 검증 기록](docs/FINAL_PREP_VALIDATION.md)을 참고하세요. 실제 Cofa 환경은 **NOT_RUN**입니다.
+**독립 준비 자료 / 41개 선택형 스킬 / Python 표준 라이브러리 도구 / 선택형 로컬 MCP 6개 도구.** 검증 범위는 [최종 준비 검증 기록](docs/FINAL_PREP_VALIDATION.md)을 참고하세요. 실제 Cofa 환경은 **NOT_RUN**입니다.
 
 ## 시험 핵심 자료
 
 **[10가지 한 페이지 판단 카드](docs/DECISION_CARD.md)** · [업무별 합성 흐름 6종](docs/BUSINESS_WORKFLOWS.md)
 
-**[시험 핵심 운영서](docs/EXAM_CORE.md)**에서 시작하세요. Notion의 2차 학습 18개와 관련 정본·연구자료까지 총 22개를 읽고 질문·구현·근거·제출·설명으로 다시 연결했습니다. [반영 범위](docs/NOTION_COVERAGE.md)와 [통합 모의 3종](docs/MOCK_EXAMS.md)을 함께 제공합니다.
+**[시험 핵심 운영서](docs/EXAM_CORE.md)**에서 시작하세요. Notion의 2차 학습 18개와 관련 정본·연구자료까지 총 22개를 읽고 질문·구현·근거·제출·설명으로 다시 연결했습니다. [반영 범위](docs/NOTION_COVERAGE.md)와 [통합 모의 5종](docs/MOCK_EXAMS.md)을 함께 제공합니다.
 
 ## 지금 필요한 것부터
 
 | 상황 | 읽을 자료 |
 | --- | --- |
 | 시험 당일 5분만 읽을 때 | **[당일 한 장 운영표](docs/EXAM_DAY_FAST_PATH.md)** |
+| 고도화 경로(오버라이드·구체 질문·역할 분리·최적화·비용) | 위 [다음 회차 빠른 경로](#고도화-경로-다음-회차-빠른-경로) |
 | 처음이며 무엇을 준비해야 할지 모름 | [학습 순서](docs/LEARNING_PATH.md) → [2026 Cofa 준비 기준](docs/COFA_2026_BRIEF.md) |
 | 15분 사전 체험 직전 | [15분 점검표](docs/TRIAL_15_MINUTES.md) |
 | 허용된 저장 작업폴더에서 기본 도구를 한 번에 읽기 전용 확인 | [한 명령 안전 점검](docs/QUICK_PREFLIGHT.md) · `tools/quick_preflight.py` |
@@ -246,7 +270,7 @@ AI와 함께 **문제 정의 → 구현 → 근거 확인 → 제출 → 직접 
 | 터미널 명령이 낯섦 | [명령표](docs/TERMINAL_CHEATSHEET.md) |
 | Skill을 어떻게 가져오는지 모름 | [가져오기·선택](docs/IMPORT_AND_SELECT_SKILLS.md) |
 | 공개 참고 키트가 제출에 섞일까 걱정됨 | [참고/제출 경계](docs/REFERENCE_SUBMISSION_BOUNDARY.md) |
-| 직접 문제를 풀며 연습하고 싶음 | [통합 모의 3종](docs/MOCK_EXAMS.md) · [짧은 훈련 6묶음](docs/PRACTICE_COFA.md) |
+| 직접 문제를 풀며 연습하고 싶음 | [통합 모의 5종](docs/MOCK_EXAMS.md) · [짧은 훈련 6묶음](docs/PRACTICE_COFA.md) |
 | 마지막 설명을 준비함 | [후속 설명 연습](docs/NO_AI_REHEARSAL.md) — 실제 AI 금지 단계에서는 사용하지 않음 |
 | 다운로드가 필요함 | [릴리스](https://github.com/AgenticLab-SH/sh-workflows/releases) — 전체 소스·개별 Skill ZIP |
 | 무엇을 읽고 보강했는지 알고 싶음 | [요구사항 반영표](docs/SOURCE_RECONCILIATION.md), [복원 한계](RECOVERY.md) |
@@ -282,6 +306,11 @@ Python 3.10+가 이미 제공될 때 표준 라이브러리만 사용합니다. 
     python3 .hackathon-kit/tools/compare_json.py .hackathon-kit/examples/before.json .hackathon-kit/examples/after.json
     python3 .hackathon-kit/tools/metrics.py .hackathon-kit/examples/classification.csv --actual actual --pred predicted --positive yes
     python3 .hackathon-kit/tools/workspace_probe.py --root . inventory --depth 2 --limit 80
+    python3 .hackathon-kit/tools/instruction_chain.py --root .
+    python3 .hackathon-kit/tools/question_candidates.py data.csv
+    python3 .hackathon-kit/tools/question_ledger.py next .hackathon-kit/templates/QUESTION_LEDGER.csv --format text
+    python3 .hackathon-kit/tools/opt_kit.py demo
+    python3 .hackathon-kit/tools/context_budget.py --root . --limit 10
 
 위 examples 경로는 예시입니다. 키트의 합성 예제를 쓰려면 .hackathon-kit/examples/...로, 실제 과제에는 허용된 해당 파일 경로로 바꿉니다. 서버를 실제로 시작한 경우에만 smoke_http.py에 **실제 포트와 경로**를 전달합니다.
 
@@ -295,6 +324,6 @@ Python 3.10+가 이미 제공될 때 표준 라이브러리만 사용합니다. 
 - 준비 자료 작성·패키징·GitHub 게시와 실제 학습·체험·시험 환경 작동은 별개입니다.
 - 과거 대화의 18/18·25/25 통과 주장이나 원 Git 커밋은 이 복원본의 검증 결과가 아닙니다. [RECOVERY.md](RECOVERY.md)를 참고합니다.
 
-**릴리스 참고:** v0.4.0 ZIP은 변경 전 36개 Skill 기준입니다. 현재 main 브랜치에는 제출 경계 검토 Skill이 추가되어 있으며, 새 개별 ZIP 릴리스 게시 여부는 별도 확인이 필요합니다.
+**릴리스 참고:** v0.4.0 ZIP은 36개 Skill 기준입니다. v0.5.0 산출물(전체 소스 ZIP, 41개 개별 Skill ZIP과 그 묶음)은 같은 형식으로 준비했으며, [릴리스](https://github.com/AgenticLab-SH/sh-workflows/releases) 페이지에 v0.5.0이 보이기 전에는 최신 main을 사용하세요. 개별 Skill ZIP은 루트에 SKILL.md와 agents/openai.yaml만 담고, 다른 문서를 참조하는 줄은 전체 소스가 있을 때만 쓰입니다.
 
 MIT License. SK하이닉스·크래프톤·Cofa·OpenAI가 보증하거나 운영하는 저장소가 아닙니다.

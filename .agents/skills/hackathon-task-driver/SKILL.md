@@ -14,6 +14,21 @@ description: Run a time-boxed AI hackathon task from ambiguous brief to minimal 
 - 업무 판단은 업무 담당자에게, 환경·제출 문제는 Helper/공식 문의에 묻도록 구분한다.
 - 지원되는 단일 Codex로 시작한다. 키트 전체를 읽히거나 전역 AGENTS/config를 덮어쓰지 않는다.
 
+## 고도화 경로 (해당할 때만)
+
+시간 제한 과제에서 자주 필요한 여섯 가지다. 과제에 해당하는 줄만 고르고, 해당 Skill 본문만 추가로 읽는다.
+
+| 상황 | 할 일 | 읽을 것 |
+| --- | --- | --- |
+| 공식 규칙이 참가자 지침 파일·프롬프트를 허용 | 작업 방식을 처음부터 고정한다. 첫 작업 세션 전에 만든다. 루트에 override가 이미 있으면 손대지 않고 첫 메시지 블록을 쓴다. 제공 원본 AGENTS.md가 있으면 override 맨 위에 원본 전문을 그대로 붙인다(원본 파일은 그대로). 원본 복사가 공식 규칙상 애매하거나 합계가 32KiB에 가까우면 첫 메시지 블록을 쓴다. Codex는 초안만 제안하고 파일 생성·새 세션 시작은 참가자가 정한다 | ../../../docs/OVERRIDE_INSTRUCTIONS.md, ../../../templates/AGENTS.override.template.md |
+| 담당자가 구체 질문에만 답하고 질문 수 제한이 없음 | 애매·경계·예외·문서와 데이터의 차이를 모두 한 사실짜리 질문으로 바꾸고, 참가자가 복사만 하면 되는 멘트를 Codex가 쓴다. 원장으로 답·가정·미해결을 나눈다 | stakeholder-agent-questioning |
+| 사용자 유형이 둘 이상(이용자/운영자 등) | 역할 매트릭스부터 만들고 권한은 처리 함수에서 강제한다. 무거운 계산은 운영자 동작에서 실행한다 | role-separated-design |
+| 데이터 가공 뒤 배정·선택·적재·일정·순서를 정해야 함 | 프로파일링→정제 로그→정식화 카드→기준선→개선→소규모 정확해 비교 순으로 진행한다. 값은 코드로 계산한다 | optimization-modeling |
+| 한도와 무관하게 비용이 평가될 수 있음 | 필요한 파일·Skill만 읽고, 기능마다 비용을 한 줄 기록한다. 같은 실패 2회면 방법을 바꾼다. 필수 검증은 줄이지 않는다 | cost-aware-execution |
+| 위 요소를 한 번에 연습 | 합성 모의 과제로 사전 연습한다(실제 과제 아님). D는 배정·역할 분리, E는 적재·묶음 | ../../../exercises/session-allocation/BRIEF.md, ../../../exercises/donation-packing/BRIEF.md |
+
+Skill 이름은 같은 skills 폴더의 `<이름>/SKILL.md`다. 개별 ZIP만 있으면 이 표의 할 일만으로 진행한다.
+
 ## 진행
 
 1. 결과를 바꿀 모호함부터 질문하고 확인된 규칙·남은 질문을 짧게 기록한다.
@@ -57,7 +72,7 @@ description: Run a time-boxed AI hackathon task from ambiguous brief to minimal 
 
 ## 단계별 짧은 기억 보조
 시작 시 사용자·목표·필수 기능·규정·산출물·설계·제외·핵심 테스트·완료 기준을 한 줄씩 고정한다.
-질문은 기존 stakeholder-interview의 2~3개→답변→공백 재평가를 따른다.
+질문은 기존 stakeholder-interview의 2~3개→답변→공백 재평가를 따른다. 구체 질문에만 답하는 무제한 담당자 에이전트라면 stakeholder-agent-questioning으로 전환하고, P0·P1이 모두 확정되거나 가정으로 기록되면 질문을 멈춘다.
 설계는 workflow-automation으로 유지/수정/조합/재설계를 고르고 반복업무 ROI의 가정과 실측을 구분한다.
 구현은 사용자 목표→작은 위임→실제 결과→사용자 판단→다음 위임 순서로 한다.
 방향이 바뀔 때만 이유를 알리고, 필요한 파일만 읽으며 같은 실패를 반복하지 않는다.

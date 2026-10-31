@@ -24,4 +24,4 @@ description: Turn ambiguous stakeholder requests into scoped, testable requireme
 
 ## 해커톤에서 질문을 끝까지 연결
 
-상황·사용자 → 규정·예외 → 출력·완료 기준 중 비어 있는 부분만 좁힌다. stakeholder-interview처럼 한 번에 2~3개 질문 후 답변과 정보 공백을 재평가한다. 고정 라운드를 모두 수행하지 않는다. 답을 받은 뒤 바뀐 분기·출력·기대 사례를 적는다. 담당자에게 구현 순서 전체를 맡기지 않는다. 전체 소스의 ../../../docs/STAKEHOLDER_QUESTIONS.md와 ../../../templates/REQUIREMENT_TRACEABILITY.md를 필요할 때만 읽는다.
+상황·사용자 → 규정·예외 → 출력·완료 기준 중 비어 있는 부분만 좁힌다. stakeholder-interview처럼 한 번에 2~3개 질문 후 답변과 정보 공백을 재평가한다. 고정 라운드를 모두 수행하지 않는다. 답을 받은 뒤 바뀐 분기·출력·기대 사례를 적는다. 담당자에게 구현 순서 전체를 맡기지 않는다. 담당자가 질문은 무제한으로 받지만 구체 질문에만 답한다면 2~3개 방식 대신 stakeholder-agent-questioning으로 애매한 지점을 모두 한 사실씩 묻는다. 전체 소스의 ../../../docs/STAKEHOLDER_QUESTIONS.md와 ../../../templates/REQUIREMENT_TRACEABILITY.md를 필요할 때만 읽는다.

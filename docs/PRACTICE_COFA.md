@@ -39,4 +39,6 @@
 
 ## 파일을 가지고 통합 연습하기
 
-[통합 모의 3종](MOCK_EXAMS.md)은 Notion 10번의 방문 신청·고객 문의·합계 오류 수리를 위한 합성 의뢰·자료·진행자 규칙을 제공합니다. 합계 연습의 broken_summary.py는 의도적 오류를 포함하며 실무 처리 도구가 아닙니다. 현재 검사·동작 확인은 NOT_RUN입니다.
+[통합 모의 5종](MOCK_EXAMS.md)은 Notion 10번의 방문 신청·고객 문의·합계 오류 수리를 위한 합성 의뢰·자료·진행자 규칙을 제공합니다. 합계 연습의 broken_summary.py는 의도적 오류를 포함하며 실무 처리 도구가 아닙니다. 현재 검사·동작 확인은 NOT_RUN입니다.
+
+[합성 모의 D: 문화센터 강좌 배정](../exercises/session-allocation/BRIEF.md)은 실전 보강 경로를 한 번에 연습합니다. 진행자는 [역할 카드](../exercises/session-allocation/FACILITATOR.md)대로 구체 질문에만 답합니다. 권장 순서는 [오버라이드 확인](OVERRIDE_INSTRUCTIONS.md) → [질문 원장](../.agents/skills/stakeholder-agent-questioning/SKILL.md)과 복사용 멘트(결과를 바꾸는 애매한 점 전부, P3는 가정, 한 턴에 묶어 작성, 전송 단위는 반응을 보고 결정) → [역할 매트릭스](../templates/ROLE_MATRIX.md) → [정식화 카드→기준선→개선](../.agents/skills/optimization-modeling/SKILL.md) → 기능마다 [비용 한 줄](../templates/COST_LOG.md)입니다. 사람 진행자와 연습할 때는 질문을 2~3개씩 묻습니다.

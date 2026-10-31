@@ -1,0 +1,3 @@
+interface:
+  display_name: "데이터 정제와 최적화 정식화"
+  short_description: "Clean data, state the optimization problem, pick a baseline-first algorithm and verify it"

@@ -38,3 +38,41 @@ The built-in Browser did not load. Inspect only the authorized project: dev-serv
 Summarize only actual completed work: goal, decision, file/function map, run commands, test evidence, limitations. Mark tests not executed as NOT_RUN. I will explain these from memory myself later; do not write or transmit answers during a no-AI phase.
 ```
 
+
+The prompts below are short Korean versions for the field-tested paths. Use them only when the official rules allow; the participant still owns every business decision and every message sent.
+
+## G. 오버라이드 반영 확인 (새 세션 첫 메시지)
+
+```text
+과제 루트의 AGENTS.override.md(원본 AGENTS.md 전문을 맨 위에 붙였다면 그 부분 포함)와 제공 원본 AGENTS.md를 읽었는지 먼저 알려줘. 이 세션에서 지킬 작업 방식을 3줄로 요약하고, 원본·공식 규칙과 충돌하는 줄이 있으면 그 사실만 적어라. 원본이 우선이다. 아직 코드는 바꾸지 마라.
+```
+
+## H. 담당자 질문 멘트 작성
+
+```text
+담당자가 구체 질문에만 답하고 질문 수 제한이 없다. 애매·경계·예외·문서와 데이터의 차이를 질문 원장에 올리고(결과를 바꾸지 않는 질문은 빼고 P3는 가정으로 기록), 내가 복사해 보낼 멘트를 P0부터 이번 한 턴에 묶어 써라. 멘트 하나는 맥락 한 줄 + 사실 하나이고 예/아니오·수치·선택지로 답할 수 있어야 한다. 몇 개씩 보낼지와 업무 판단은 내가 정한다.
+```
+
+## I. 역할 매트릭스 작성
+
+```text
+사용자 역할이 둘 이상이다. templates/ROLE_MATRIX.md 형식으로 역할별 화면·데이터·권한·흐름을 표로 정리해라. 권한은 화면이 아니라 처리 함수에서 막는 위치를 함께 적어라. 확정되지 않은 권한은 질문 원장 후보로 따로 표시해라.
+```
+
+## J. 정식화 카드 작성
+
+```text
+구현 전에 정식화 카드만 써라: 결정 변수, 반드시 지킬 제약, 가능하면 지킬 선호, 목표 지표, 입력 정제 로그의 근거. 담당자 확인이 없는 제약은 가정으로 표시해라. 코드는 아직 쓰지 마라.
+```
+
+## K. 기준선 대비 비교
+
+```text
+같은 입력으로 단순 기준선과 현재 개선안을 실행하고 목표 지표·제약 위반 수·실행 시간을 표로 비교해라. 값은 코드로 계산하고 실제 실행한 명령을 적어라. 작은 입력에서 정확해와 비교가 가능하면 함께 보이고, 실행하지 못한 비교는 NOT_RUN으로 적어라.
+```
+
+## L. 비용 점검
+
+```text
+방금 끝낸 기능의 비용을 한 줄로 기록해라: 읽은 파일 수, 재시도 횟수, 큰 출력이나 전체 파일 재생성 여부. 같은 실패가 2번 있었다면 바꿀 방법을 제안해라. 필수 검증은 줄이지 마라.
+```

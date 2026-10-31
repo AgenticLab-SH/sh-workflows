@@ -1,0 +1,3 @@
+interface:
+  display_name: "역할 분리 설계"
+  short_description: "Separate screens, data views, permissions and flows when a task has multiple user roles"

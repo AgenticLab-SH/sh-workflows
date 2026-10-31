@@ -6,6 +6,6 @@ Use a **reviewed allowlist**, not a recursive archive: independently licensed, n
 
 Do not transplant `config.toml`, credentials, histories, local session databases, private projects, plugin auth or platform permissions. Do not override the provided Codex home or update its version to import familiar settings.
 
-The public toolkit already contains 37 generic Skills. In a permitted environment, read only the one or two relevant Skill bodies from the public clone; that preserves the operator's model and approval policy.
+The public toolkit already contains 41 generic Skills. In a permitted environment, read only the one or two relevant Skill bodies from the public clone; that preserves the operator's model and approval policy.
 
 Exam artifacts, actual prompts, outputs and logs must not be pushed or uploaded externally. Only offline synthetic pre-exam test results may be published from an authorized personal environment.

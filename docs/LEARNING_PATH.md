@@ -4,7 +4,7 @@
 
 ## 먼저 읽을 통합본
 
-[시험 핵심 운영서](EXAM_CORE.md) → [질문 사다리](STAKEHOLDER_QUESTIONS.md) → [단계별 지시문](DELEGATION_PROMPTS.md) → [근거와 복구](EVIDENCE_AND_RECOVERY.md) → [통합 모의 3종](MOCK_EXAMS.md)의 순서로 시작합니다. Notion 학습 18개의 본문을 추가로 읽어 보강한 경로입니다. 오래된 '오늘/내일'은 문서 작성일 기준으로 구분합니다.
+[시험 핵심 운영서](EXAM_CORE.md) → [질문 사다리](STAKEHOLDER_QUESTIONS.md) → [단계별 지시문](DELEGATION_PROMPTS.md) → [근거와 복구](EVIDENCE_AND_RECOVERY.md) → [통합 모의 5종](MOCK_EXAMS.md)의 순서로 시작합니다. Notion 학습 18개의 본문을 추가로 읽어 보강한 경로입니다. 오래된 '오늘/내일'은 문서 작성일 기준으로 구분합니다.
 
 ## 18개 주제와 읽는 순서
 
@@ -28,6 +28,11 @@
 | 16 | 준비 시간 배분 | 아래 '시간별 경로' |
 | 17 | 실제 1회 체험 | [15분 점검표](TRIAL_15_MINUTES.md) |
 | 18 | 공개 GitHub·Skill 반입 | [가져오기·선택](IMPORT_AND_SELECT_SKILLS.md), [출처 기록](../templates/ATTRIBUTION.md) |
+
+### 실전 보강 경로 익히는 순서
+
+18개 주제를 마친 뒤 하나씩 익힙니다. ① [오버라이드](OVERRIDE_INSTRUCTIONS.md)로 작업 방식 고정 → ② [stakeholder-agent-questioning](../.agents/skills/stakeholder-agent-questioning/SKILL.md)으로 질문 원장·복사용 멘트 → ③ [role-separated-design](../.agents/skills/role-separated-design/SKILL.md)으로 역할 매트릭스 → ④ [optimization-modeling](../.agents/skills/optimization-modeling/SKILL.md)으로 정식화 카드→기준선→개선 → ⑤ [cost-aware-execution](../.agents/skills/cost-aware-execution/SKILL.md)으로 기능별 비용 한 줄.
+마지막에 [합성 모의 D: 문화센터 강좌 배정](../exercises/session-allocation/BRIEF.md)으로 다섯 가지를 한 번에 연습하고, 다른 유형(적재·묶음)은 [합성 모의 E](../exercises/donation-packing/BRIEF.md)로 연습합니다. 질문 개수는 사람 담당자에게 2~3개씩, 구체 질문만 답하는 무제한 담당자 에이전트에게는 결과를 바꾸는 애매한 점 전부이고 P3는 가정으로 기록합니다.
 
 ## 1. 문제를 정의한다는 것
 

@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.5.0 - 2026-11-01 (main, local commits; release ZIP not regenerated)
+
+- Added general work patterns for time-boxed AI hackathon tasks. No task scenario, data, wording, scoring text or candidate information is included.
+- Override instructions as a first-class path: `docs/OVERRIDE_INSTRUCTIONS.md` (decision order: keep an existing override, path A without an original, path A2 that pastes the provided AGENTS.md verbatim at the top, first-message block B, fallback C), `templates/AGENTS.override.template.md`, `templates/PROMPT_OVERRIDE_BLOCK.md`, and read-only `tools/instruction_chain.py` (load order, shadowing, byte limit, `original_embedded`, empty-file warning).
+- New Skills (37 → 41): `stakeholder-agent-questioning` (single-fact questions and copy-ready messages for a stakeholder that answers only concrete questions; question vs message send-unit trial; re-ask and stop rules), `role-separated-design` (role matrix, derived views, function-level permission and row-ownership checks), `optimization-modeling`, `cost-aware-execution`.
+- New templates and tools: `templates/QUESTION_LEDGER.csv` and `QUESTION_MESSAGES.md` with `tools/question_ledger.py` (`lint`, `next` with rewrite-needed rows, `summary`; optional `ask_count` retry limit), `templates/ROLE_MATRIX.md`, `templates/COST_LOG.md` with `tools/context_budget.py`, and standard-library `tools/opt_kit.py` (Hungarian, capacitated assignment with `allow_unassigned`/`forbidden`, greedy + swap, `min_cost_flow`, `assignment_flow` with per-row limits, groups and `fixed` pairs, `constraint_report`, knapsack DP, FFD, interval scheduling, 2-opt, Dijkstra, annealing, Pareto front, `demo`).
+- New synthetic mock D `exercises/session-allocation/` (community-centre weekly class allocation) with a facilitator card that answers only specific questions, plus fixture tests.
+- New synthetic mock E `exercises/donation-packing/` (flea-market donation storage boxes: bin packing with two limits, a no-mix rule and set splits); its fixture test recomputes the facilitator numbers and checks the optimum by exhaustive search.
+- New read-only `tools/question_candidates.py`: drafts question-ledger rows from data-visible decision points (blanks, sparse columns, zero/negative values, mixed units, IDs that differ by spaces/case, repeated IDs, timestamp ties, few-valued text columns that may carry combination rules, missing references).
+- `opt_kit.py` packing helpers for several capacity dimensions and label conflicts: `first_fit_multi` (baseline in a given order), `bins_lower_bound`, `pack_report` (violations and split groups). They give a baseline and checks, not an optimum.
+- Connected the paths in README, START_PROMPT (section 0 override check, question mode, cost rule), hackathon-task-driver, SKILLS_INDEX, EXAM_DAY_FAST_PATH, HACKATHON_RUNBOOK, DECISION_CARD, CLI_READY_PROMPTS, DELEGATION_PROMPTS, LEARNING_PATH, PRACTICE_COFA, MOCK_EXAMS and IMPORT_AND_SELECT_SKILLS. stakeholder-interview and requirements-discovery switch to the new questioning Skill when questions are unlimited.
+- Local verification: `python -B -m unittest discover -s tests -v` on Windows Python 3.13 → 168 tests OK. Live Codex override loading, real stakeholder agents and Cofa runtime remain NOT_RUN.
+- `question_ledger.py lint` bounds near-duplicate work to 200,000 comparison pairs in total (largest categories skipped first); 4 categories × 500 similar rows measured 7.4 s → 1.5 s locally.
+- Release packaging for v0.5.0 (source ZIP, 41 individual Skill ZIPs and the bundle) prepared and checked locally; GitHub release not created.
 ## 0.4.2 - 2026-10-31 (main, no release ZIP regenerated)
 
 - Added bounded offline-by-default `quick_preflight.py`: project markers, local tool presence, optional read-only fixed-public GitHub access, optional protected saved-file hash.

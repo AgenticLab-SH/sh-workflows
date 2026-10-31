@@ -28,8 +28,13 @@ Codex에 다음과 같이 **정확한 본문 경로를 읽도록** 요청하면 
 | 제출 구조·실행법 정리 | documentation-handoff |
 | Clone한 키트가 제출 대상에 포함될 수 있음 | reference-submission-review |
 | 사전 설명 연습 | short-answer-defense — 실제 no-AI 단계에서는 사용 금지 |
+| 담당자 에이전트가 구체 질문에만 답함 | stakeholder-agent-questioning |
+| 이용자/운영자처럼 역할이 둘 이상 | role-separated-design |
+| 데이터 정제 뒤 배정·선택·순서 최적화 | optimization-modeling |
+| 토큰·호출 비용이 평가될 수 있음 | cost-aware-execution |
 
-처음에는 진행 Skill과 현재 필요한 Skill 1개면 충분합니다. 37개를 전부 읽히거나 설치하는 것은 권장하지 않습니다.
+처음에는 진행 Skill과 현재 필요한 Skill 1개면 충분합니다. 41개를 전부 읽히거나 설치하는 것은 권장하지 않습니다.
+작업 방식을 처음부터 고정하는 오버라이드 지침은 Skill이 아니라 [오버라이드 운영서](OVERRIDE_INSTRUCTIONS.md)를 따릅니다.
 
 ## 개별 ZIP은 언제 사용하는가
 
