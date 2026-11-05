@@ -1,0 +1,4 @@
+interface:
+  display_name: Safe Workroom Bootstrap
+  short_description: Confirm one task folder, preserve the baseline, isolate reports and use ports 3000/3001
+  default_prompt: Use $safe-workroom-bootstrap to verify my project root and prepare an isolated, auditable workroom without modifying unrelated files.

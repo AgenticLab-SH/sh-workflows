@@ -8,3 +8,6 @@ __pycache__/
 
 # Local-only workbench event summaries; not for publishing
 .review-workbench/
+
+# Workroom v2 is local to the authorized task, never to this public repository
+.cofa-workbench/

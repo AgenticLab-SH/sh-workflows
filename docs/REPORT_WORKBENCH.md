@@ -1,5 +1,8 @@
 # Local explainability workbench: reports + results
 
+> **Compatibility note (2026-11-05):** This describes the older v1 viewer (default 8765 and `.review-workbench`). The user's current default is **V2: [safe project start](SAFE_WORKROOM_START.md)**, `tools/workroom.py` on **3000**, and a separate deliverable on **3001**, all agent notes in one `.cofa-workbench` folder. Do not run both viewers or move the project root to the kit.
+
+
 This is a **general-purpose, local-first development aid**. It is not a solved examination task or a recording of an assessment. Use only if the current task and host permit a local Python server and project-local writing. Do not send confidential source data, challenge statements, answers, logs or candidate links to any external service or GitHub.
 
 ## 1. What problem does it solve?

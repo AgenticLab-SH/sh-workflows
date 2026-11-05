@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.7.0 - 2026-11-05 (main only; no old release overwritten)
+
+- Default workflow now confirms the actual VS Code project root and records a metadata-only pre-Clone baseline before importing the reference kit; no home-wide search.
+- Introduced one protected `.cofa-workbench` directory for reference kit, requirement/data profiles, stakeholder Q&A, design decisions, ownership, validation and independent agent reports.
+- Added `safe-workroom-bootstrap` Skill (42 -> 43), `tools/workroom.py`, and prebuilt responsive report UI in `tools/workroom_ui.html`. Default read-only report port **3000**; actual project service port **3001** remains independently owned by the task.
+- Existing v1 explainability viewer remains available as a compatibility tool, but is no longer the default. No project-root override is created automatically.
+- Synthetic isolated tests: **12/12 PASS**; UI embedded JS syntax: PASS. Synthetic HTTP/API responses: PASS; real Cofa/Windows runtime: NOT_RUN. Browser screenshot rendering timed out, so actual UI visual QA: NOT_RUN.
+- GitHub contains generic code and examples only; no live assessment data, participant answers, credential material, or externally uploaded execution logs.
+
+
 ## 0.6.0 - 2026-11-05 (main only, no release ZIP update)
 
 - Added explainable-workbench Skill (41 -> 42) and a local-only append-only two-tab report/results viewer, plus a human decision/architecture verification guide and a small evidence-card template.

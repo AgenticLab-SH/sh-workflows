@@ -2,7 +2,8 @@
 
 - This is a preparation/reference repository. Distinguish the real task root from the cloned kit folder; do not replace the task README, instructions, existing skills, or submission files.
 - A cloned public toolkit is reference-only; a hidden `.hackathon-kit` folder is not guaranteed to be excluded from official submissions. Inspect and confirm the official preview, preserve task files, and never silently delete reference contents.
-- Begin a time-boxed hackathon with .agents/skills/hackathon-task-driver/SKILL.md. Load only task-relevant additional skills.
+- New default bootstrap: use docs/SAFE_WORKROOM_START.md and .agents/skills/safe-workroom-bootstrap/SKILL.md before importing the public kit. Confirm the exact task root and record a baseline BEFORE Clone; do not search or modify sibling/home folders. Begin task implementation with hackathon-task-driver only after root/scope confirmation.
+- Keep all agent notes, stakeholder dialogue records, decisions, and independent reports in one `.cofa-workbench/` folder under the confirmed task root; modify task deliverables only at officially required locations. Do not auto-create or overwrite project-root AGENTS.override.md. Load only task-relevant additional skills.
 - The participant owns problem definition, business decisions, scope and final explanation; the provided coding agent owns only the delegated implementation.
 - When the participant needs to understand concurrent agent output, optionally load explainable-workbench; keep separate append-only local decision/test evidence with a single writer per source file. Do not auto-start a server or copy exam data to this repo.
 - Separate stakeholder questions, implementation requests, platform help, and incident reporting. Keep requirements, assumptions, decisions, and actual execution evidence distinct.

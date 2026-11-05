@@ -1,9 +1,10 @@
 # 해커톤 시작 Skill
 
-42개 중 먼저 hackathon-task-driver를 읽고, 현재 과제에 필요한 아래 Skill 1~2개만 추가로 선택합니다. 기존 35개 Skill은 보존했습니다.
+43개 중 먼저 safe-workroom-bootstrap으로 범위/최초 기록을 확인하고 hackathon-task-driver를 읽고, 현재 과제에 필요한 아래 Skill 1~2개만 추가로 선택합니다. 기존 35개 Skill은 보존했습니다.
 
 | Skill | 용도 |
 | --- | --- |
+| [safe-workroom-bootstrap](../.agents/skills/safe-workroom-bootstrap/SKILL.md) | VS Code 과제 루트 확인 → Clone 전 원본 기록 → 단일 격리 폴더 → 보고 3000/실서비스 3001 |
 | [hackathon-task-driver](../.agents/skills/hackathon-task-driver/SKILL.md) | 제공 IDE에서 요구 파악·최소 구현·허용된 증거·제출 준비를 연결 |
 | [reference-submission-review](../.agents/skills/reference-submission-review/SKILL.md) | 공개 참고 키트와 필수 제출 파일의 경계·미리보기 확인 |
 | [stakeholder-agent-questioning](../.agents/skills/stakeholder-agent-questioning/SKILL.md) | 구체 질문에만 답하는 담당자에게 애매·경계·예외를 한 사실짜리 질문으로 묻고 복사용 멘트·원장 관리 |
@@ -50,6 +51,7 @@ Select one or two relevant skills; current host rules take priority.
 | reference-submission-review | Identify reference toolkit and synthetic files separately from required task artifacts before submission. |
 | research-evidence | Research unfamiliar domains and compare evidence quality; use for source synthesis, fact checking, uncertainty tracking, and reference-grounded notes. |
 | role-separated-design | Design, build and verify separate screens, data views, permissions and state flows when a task has two or more user roles. |
+| safe-workroom-bootstrap | Confirm a strict project root before Clone, preserve initial metadata in one local folder and run a 3000 report UI next to an independent 3001 task service. |
 | saved-file-reconciliation | Diagnose disagreement between a browser editor, terminal, and coding agent after files are edited or saved. Use when a file does not appear, an external-change warning appears, an unsaved buffer is suspected, or an agent's edit seems missing. |
 | security-privacy-review | Review software and documents for data exposure, permission errors, insecure defaults, prompt injection, and accidental outbound transfers. |
 | short-answer-defense | Practice evidence-based short written defenses of an AI-assisted deliverable under timed, no-AI conditions; use for architecture and verification Q&A. |

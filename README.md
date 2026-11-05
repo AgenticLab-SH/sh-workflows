@@ -1,8 +1,35 @@
 # SH Workflows
 
+## V2 · 실제 과제 루트를 보존하는 기본 시작 경로
+
+**먼저 볼 문서: [최초 상태 → 격리 Clone → 보고 3000 / 서비스 3001](docs/SAFE_WORKROOM_START.md)**
+
+> 이 저장소는 공개 참고 도구이며 실제 평가 문제·개인데이터·정답/로그를 포함하지 않습니다. 최신 공식 지시와 사용자 허용 범위를 우선합니다. 실제 감독 과제의 자료와 결과는 GitHub로 Push하지 않습니다.
+
+**실행 순서 (첫 2단계의 순서를 바꾸지 말 것):**
+
+1. VS Code 파일 탐색기에서 제공 과제의 **정확한 루트**를 본인이 확인하고, 해당 터미널의 `pwd -P`와 비교. 사용자 홈 전체 검색 금지.
+2. **Clone 이전**에 `.cofa-workbench/INITIAL_STATE.md`, `FILES_AT_START.tsv`, `ROOT_PATH.txt`를 확인된 루트 안에 기록. [안전한 1회 명령 블록](docs/SAFE_WORKROOM_START.md#1-반드시-clone-이전에-초기-상태-기록)을 사용하고 기존 기록 덮어쓰기 금지.
+3. 공개 자료 사용이 허용된 경우에만 `git clone --depth 1 https://github.com/AgenticLab-SH/sh-workflows.git .cofa-workbench/kit`.
+4. `python3 .cofa-workbench/kit/tools/workroom.py --root . init`으로 한 격리 폴더 아래에 질문/답변·데이터 프로파일·결정·에이전트 기록 양식을 생성한다.
+5. 보고 서버 **3000**: `python3 .cofa-workbench/kit/tools/workroom.py --root . serve --port 3000`. 이 서버는 읽기 전용이며 실제 과제 서비스를 실행·수정하지 않는다.
+6. 실제 **과제 서비스 3001**: 과제 README에 맞는 명령과 프레임워크로 별도 개발·실행. 공식 Browser에서 사용자가 확인한다.
+
+**단독 Skill:** [safe-workroom-bootstrap](.agents/skills/safe-workroom-bootstrap/SKILL.md). [Workroom HTML UI](tools/workroom_ui.html) / [로컬 운영 도구](tools/workroom.py) / [합성 단위 테스트](tests/test_workroom.py).
+
+- 기존 `report_workbench.py`/포트 8765는 구버전 선택 경로로 보존된다. **새 기본은 workroom.py / 3000**이며 둘을 동시에 켜지 않는다.
+- 모든 에이전트용 문서·질문 원장·누적 기록은 **과제 루트 아래 하나의 .cofa-workbench 폴더에만** 둔다. 실제 과제 소스와 제출물은 공식 README가 지정한 기존 위치에서만 수정한다.
+- 기본 README/CSV/설정은 초기 상태 확인 전에 변경하지 않는다. 기존 AGENTS.md/AGENTS.override.md를 자동으로 새로 만들거나 덮어쓰지 않는다.
+- 사용자가 직접 확인할 수 있도록 보고 UI는 **진행·판단 / 검증·결과 / 초기 상태** 세 화면으로 미리 구성돼 있다. AI가 화면을 봤다고 주장하지 않는다.
+- 기존 10월 31일 시험 일정 등은 과거 회차 기록이므로 재응시의 **현재 공식 공지 시간**과 구별한다.
+
+---
+
+## 기존 일반 사용 설명(보관 · V2 우선)
+
 ## 실제 맥락을 먼저 전달한 뒤 시작하기
 
-**새 권장 시작점: [START_PROMPT.md — 실제 과제와 사전 키트를 결합하는 시작 프롬프트](START_PROMPT.md)**
+**기존 일반 시작 프롬프트:** [START_PROMPT.md](START_PROMPT.md) — v2 루트 확인·초기 기록 후에만 사용.
 
 공식 안내·과제 내용·이미 받은 담당자 답변을 평가 환경 안의 **제공 Codex**에 먼저 전달하세요.
 외부 ChatGPT나 이 GitHub에는 실제 시험 자료를 보내지 않습니다.
@@ -17,7 +44,7 @@ Codex가 이미 받은 내용을 다시 묻지 않고, 실제 규칙·파일·�
 
 ## 여러 Codex 작업을 이해하고 검증하는 새 경로
 
-**[Explainable Workbench](docs/REPORT_WORKBENCH.md)**: 작업별 이유·대안·실제 검사·남은 한계가 누적되는 로컬 보고 화면. 두 탭(보고/판단, 결과/검증), 에이전트별 상태 필터와 독립 기록을 제공한다. 실제 과제와 평가자료를 GitHub에 올리는 기능은 없다.
+**[이전 Explainable Workbench(v1)](docs/REPORT_WORKBENCH.md)**: (현재 기본 3000 보고 화면과 별개인 호환 도구. 먼저 V2 문서를 따르세요.)  작업별 이유·대안·실제 검사·남은 한계가 누적되는 로컬 보고 화면. 두 탭(보고/판단, 결과/검증), 에이전트별 상태 필터와 독립 기록을 제공한다. 실제 과제와 평가자료를 GitHub에 올리는 기능은 없다.
 
 - **먼저 이해:** [Human-led decision workflow](docs/HUMAN_DECISION_WORKFLOW.md) · [선택 근거 카드](templates/DECISION_EXPLANATION.md)
 - **선택 Skill:** [explainable-workbench](.agents/skills/explainable-workbench/SKILL.md) — 설명이 어렵거나 여러 Codex가 병렬 작업할 때만 읽기
