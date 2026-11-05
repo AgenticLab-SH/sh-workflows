@@ -6,7 +6,7 @@
 - Introduced one protected `.cofa-workbench` directory for reference kit, requirement/data profiles, stakeholder Q&A, design decisions, ownership, validation and independent agent reports.
 - Added `safe-workroom-bootstrap` Skill (42 -> 43), `tools/workroom.py`, and prebuilt responsive report UI in `tools/workroom_ui.html`. Default read-only report port **3000**; actual project service port **3001** remains independently owned by the task.
 - Existing v1 explainability viewer remains available as a compatibility tool, but is no longer the default. No project-root override is created automatically.
-- Synthetic isolated tests: **12/12 PASS**; UI embedded JS syntax: PASS. Synthetic HTTP/API responses: PASS; real Cofa/Windows runtime: NOT_RUN. Browser screenshot rendering timed out, so actual UI visual QA: NOT_RUN.
+- Synthetic isolated tests: **13/13 PASS** (including preventing unverified PASS claims); UI embedded JS syntax: PASS. Synthetic HTTP/API responses: PASS; real Cofa/Windows runtime: NOT_RUN. Browser screenshot rendering timed out, so actual UI visual QA: NOT_RUN.
 - GitHub contains generic code and examples only; no live assessment data, participant answers, credential material, or externally uploaded execution logs.
 
 

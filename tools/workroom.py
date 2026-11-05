@@ -117,6 +117,8 @@ def note(root: Path, agent: str, kind: str, state: str, data: dict[str, str]) ->
     fields = {k: clean(data.get(k, ''), k) for k in FIELDS}
     if not fields['title']:
         raise ValueError('Event title must not be empty')
+    if state == 'pass' and (kind not in ('verification', 'result') or not fields['evidence']):
+        raise ValueError('PASS requires an actual verification/result event and evidence')
     payload = {'version': 1, 'id': uuid4().hex,
                'time_utc': datetime.now(timezone.utc).isoformat(timespec='milliseconds'),
                'agent': agent, 'kind': kind, 'state': state, **fields}

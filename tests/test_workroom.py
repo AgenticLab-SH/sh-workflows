@@ -86,6 +86,14 @@ class WorkroomTests(unittest.TestCase):
             w.note(self.root,'worker','decision','proposed',{'title':'ok','summary':'x'*1800})
         self.assertEqual(w.list_events(self.control),[])
 
+    def test_pass_requires_verification_and_evidence(self):
+        w.init(self.root)
+        with self.assertRaisesRegex(ValueError,'PASS requires'):
+            w.note(self.root,'worker','decision','pass',{'title':'Untested assertion','evidence':'A guess'})
+        with self.assertRaisesRegex(ValueError,'PASS requires'):
+            w.note(self.root,'worker','verification','pass',{'title':'No observed check'})
+        self.assertEqual(w.list_events(self.control),[])
+
     def test_events_read_only_and_summary(self):
         w.init(self.root)
         w.note(self.root,'worker','verification','pass',{'title':'Synthetic check','evidence':'Synthetic PASS'})
