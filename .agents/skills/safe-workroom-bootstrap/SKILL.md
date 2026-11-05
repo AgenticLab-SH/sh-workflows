@@ -39,7 +39,7 @@ After meaningful milestones, record one event containing **what, why, rejected a
 Example (only if local documentation is permitted):
 
 ```sh
-python3 .cofa-workbench/kit/tools/workroom.py --root . note --agent coordinator --kind decision --state confirmed --title 'Feasible baseline first' --reason 'Auditable before harder optimization' --alternative 'Unbounded complex search' --evidence 'Decision only; runtime NOT_RUN'
+python3 .cofa-workbench/kit/tools/workroom.py --root . note --agent coordinator --role coordinator --kind decision --state confirmed --basis human --decision-by human --title 'Feasible baseline first' --reason 'Auditable before harder optimization' --alternative 'Unbounded complex search' --evidence 'Decision only; runtime NOT_RUN'
 ```
 
 Never call a proposed or unexecuted test passed. Distinguish the participant's manual browser observation from CLI evidence.

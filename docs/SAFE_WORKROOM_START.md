@@ -138,7 +138,7 @@ python3 .cofa-workbench/kit/tools/workroom.py --root . serve --port 3000
 ## 6. 명시적 기록 예
 
 ```sh
-python3 .cofa-workbench/kit/tools/workroom.py --root . note --agent coordinator --kind decision --state confirmed --title '단순 기준선부터 비교' --reason '검증 가능한 첫 결과를 우선 확보' --alternative '검증 전 복잡한 탐색 알고리즘 도입' --evidence '사람의 설계 선택. 실제 품질 테스트는 NOT_RUN'
+python3 .cofa-workbench/kit/tools/workroom.py --root . note --agent coordinator --role coordinator --kind decision --state confirmed --basis human --decision-by human --title '단순 기준선부터 비교' --reason '검증 가능한 첫 결과를 우선 확보' --alternative '검증 전 복잡한 탐색 알고리즘 도입' --evidence '사람의 설계 선택. 실제 품질 테스트는 NOT_RUN'
 ```
 
 이 기록은 `.cofa-workbench/events/`에 한 번만 추가된다. 정량 지표를 측정하지 않았으면 성능 향상을 주장하지 않는다. 서비스·코드·상태·비용 검증이 실제로 실행된 후에만 `pass`라고 기록한다.
