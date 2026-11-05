@@ -70,7 +70,7 @@ class WorkroomTests(unittest.TestCase):
     def test_parallel_event_records_own_files(self):
         w.init(self.root)
         def create(i):
-            return w.note(self.root,f'worker{i%8}', 'decision','confirmed',{'title':f'Option {i}', 'reason':'Compared a simple alternative'})
+            return w.note(self.root,f'worker{i%8}', 'decision','confirmed',{'title':f'Option {i}', 'reason':'Compared a simple alternative', 'basis':'human', 'decision_by':'human', 'role':'coordinator', 'priority':'P1'})
         with ThreadPoolExecutor(max_workers=8) as pool:
             values=list(pool.map(create,range(70)))
         self.assertEqual(len(set(x['id'] for x in values)),70)
@@ -96,7 +96,7 @@ class WorkroomTests(unittest.TestCase):
 
     def test_events_read_only_and_summary(self):
         w.init(self.root)
-        w.note(self.root,'worker','verification','pass',{'title':'Synthetic check','evidence':'Synthetic PASS'})
+        w.note(self.root,'worker','verification','pass',{'title':'Synthetic check','evidence':'command: python -m unittest; result: 1 test passed','basis':'observed', 'role':'qa'})
         x=w.summary(self.root)
         self.assertTrue(x['root_confirmed'])
         self.assertEqual(x['total_events'],1)
@@ -118,6 +118,53 @@ class WorkroomTests(unittest.TestCase):
         self.assertIn(".hidden=name!==view", html)
         self.assertIn('.view[hidden]{display:none!important}', html)
         self.assertNotIn('#view-verify,#view-initial{display:none}',html)
+
+    def test_levels_priorities_and_report_sources(self):
+        w.init(self.root)
+        w.note(self.root, 'analyst','question','proposed',{
+            'title':'Which policy is authoritative?', 'source_ref':'R-001',
+            'role':'requirements', 'basis':'official', 'priority':'P0'})
+        w.note(self.root, 'coordinator','decision','confirmed',{
+            'title':'Approved simple baseline', 'role':'coordinator', 'decision_by':'human',
+            'basis':'human', 'priority':'P1', 'source_ref':'D-001'})
+        w.note(self.root, 'qa','verification','pass',{
+            'title':'Synthetic test', 'role':'qa','basis':'observed',
+            'evidence':'command: python -m unittest; result: 1 test passed'})
+        events=w.list_events(self.control)
+        self.assertEqual({e['level'] for e in events}, {'L1','L2','L4'})
+        self.assertEqual(next(e for e in events if e['kind']=='verification')['basis'],'observed')
+        summary=w.summary(self.root)
+        self.assertEqual(summary['counts_by_level']['L2'],1)
+        self.assertEqual(summary['counts_by_priority']['P0'],1)
+
+    def test_confirmed_requires_named_owner(self):
+        w.init(self.root)
+        with self.assertRaisesRegex(ValueError, 'Confirmed decision'):
+            w.note(self.root,'agent','decision','confirmed',{'title':'AI decision'})
+        with self.assertRaisesRegex(ValueError, 'basis=observed'):
+            w.note(self.root,'qa','verification','pass',{'title':'Guessed pass','evidence':'maybe'})
+        with self.assertRaisesRegex(ValueError, 'Invalid report level'):
+            w.note(self.root,'worker','question','proposed',{'title':'Bad level','level':'L9'})
+        self.assertEqual(w.list_events(self.control),[])
+
+    def test_old_v1_event_remains_readable(self):
+        w.init(self.root)
+        p=self.control/'events'/'legacy.json'
+        p.write_text(json.dumps({'version':1, 'id':'old', 'agent':'worker',
+            'kind':'decision','state':'proposed', 'time_utc':'2026-01-01T00:00:00+00:00',
+            'title':'Legacy decision'}),encoding='utf-8')
+        old=w.list_events(self.control)[0]
+        self.assertEqual(old['level'],'L2')
+        self.assertEqual(old['priority'],'none')
+        self.assertEqual(old['basis'],'unspecified')
+
+    def test_html_level_filter_and_black_text(self):
+        html=Path(w.__file__).with_name('workroom_ui.html').read_text(encoding='utf-8')
+        self.assertIn('--ink:#111111',html)
+        self.assertIn('id="level"',html)
+        self.assertIn('자료 계층 · L0~L4',html)
+        self.assertIn('event.level',html)
+        self.assertIn('data-level="L4"',html)
 
     def test_read_only_http_endpoints(self):
         w.init(self.root)

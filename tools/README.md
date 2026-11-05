@@ -21,3 +21,7 @@ All commands are offline-first Python 3 standard library with no external model 
 These are **generic building blocks**, not finished business logic or a ready-made answer.
 Some operations return nonzero exit when quality checks fail, by design. Treat a failed status as evidence to inspect, not a reason to bypass restrictions.
 
+
+### V3 report metadata and high-contrast UI
+
+The `workroom.py` tool supports roles, L0–L4 source hierarchy, P0–P3 priorities, provenance (`--basis`, `--source-ref`) and human decision ownership (`--decision-by`). Local v1 event JSON files remain readable. `decision/confirmed` requires a named decision owner; `verification/pass` or `result/pass` requires `--basis observed` and execution evidence. See [reporting standard](../docs/WORKROOM_REPORTING_STANDARD.md). 3000 is the read-only report UI; 3001 belongs to the real task service.

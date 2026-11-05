@@ -56,3 +56,13 @@ The dashboard provides *Progress/decisions*, *Verification/results*, and *Initia
 Do not crawl the user's home, transplant Codex global config, install hidden plugins, circumvent host policies, push assessment results, capture monitored screens, or send confidential task information outside the provided IDE. In any monitored no-AI response phase, stop all assistance.
 
 Before handoff, use the existing `short-answer-defense` Skill **during permitted preparation only** to confirm the human can explain approach/alternatives, module flow/state ownership, implemented/assumed/excluded, normal/errors, measured evidence, and AI proposals accepted/revised/rejected. These are generic study themes, not answers to live examination questions.
+
+## Reporting schema v3 and UI readability
+
+After confirming the root and completing the pre-Clone baseline, read [the reporting standard](../../../docs/WORKROOM_REPORTING_STANDARD.md) only if multiple agents, user decisions, or test evidence need tracking. Keep all notes inside `.cofa-workbench/` and preserve source-file ownership. The port 3000 UI shows near-black text on white surfaces; L0–L4 is an evidence ladder, while P0–P3 is separate work priority. Colors are borders/pale fills, never the only signal. Record the human decision owner for confirmed decisions and a real observation for PASS. Example:
+
+```sh
+python3 .cofa-workbench/kit/tools/workroom.py --root . note --agent analyst --role requirements --kind question --state proposed --priority P0 --basis official --source-ref R-001 --title 'Unconfirmed input rule'
+```
+
+The coordinator assigns one writer per source file. Do not copy task files into the public kit or Git Push from a restricted examination. Old v1 events remain readable; new events use v2 schema metadata.

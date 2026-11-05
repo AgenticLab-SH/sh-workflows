@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.8.0 - 2026-11-05 (main; release ZIP unchanged)
+
+- High-contrast Workroom 3000 UI: black text on light sidebar/panels, labeled L0–L4 levels, agent/status/level filters and visual evidence hierarchy. No change to independent service port 3001.
+- Workroom events v2 add `level`, `priority`, `basis`, `role`, `source_ref`, `decision_by`; old v1 events remain readable.
+- Confirmed design decisions require named human/stakeholder/official owner; PASS requires observed basis and test evidence, not an agent completion claim.
+- Published public reporting and color contract plus updated starter and skills. Isolated synthetic Workroom test suite: 17 passed. GitHub content verification is not equivalent to Cofa Browser usability proof.
+- All workroom files remain within the explicit project root; no monitored exam data, Push, screenshot or external transport.
+
+
 ## 0.7.0 - 2026-11-05 (main only; no old release overwritten)
 
 - Default workflow now confirms the actual VS Code project root and records a metadata-only pre-Clone baseline before importing the reference kit; no home-wide search.

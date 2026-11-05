@@ -62,3 +62,7 @@ Explain unfamiliar concepts once in ordinary language. Never draft or coach whil
 Confirm the required outputs exist in the actual task root, the permitted tests were run, evidence status is truthful, the participant manually checked the UI, and the report/reference folder is not unintentionally submitted. Never mark a local report note as an officially submitted artifact or claim a screenshot was observed without direct evidence.
 
 See [field guide](references/field-guide.md) for the generic event schema, statuses and data-protection boundary.
+
+## Current workroom integration (v3)
+
+For newly prepared projects, prefer `tools/workroom.py` and `docs/WORKROOM_REPORTING_STANDARD.md` on report port 3000 over the legacy `report_workbench.py` viewer at 8765. Do not run both viewers. Report L1 requirements, L2 human decisions, L3 implementation, L4 verified outcomes, with L0 baseline separately. Only recorded observer evidence may be labelled PASS. Keep the actual service independently on 3001.
