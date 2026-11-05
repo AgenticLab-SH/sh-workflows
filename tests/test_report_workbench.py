@@ -111,7 +111,6 @@ class ReportWorkbenchTest(unittest.TestCase):
 if __name__ == '__main__':
     unittest.main()
 
-
 class PublicThemeTest(unittest.TestCase):
     def test_public_tokens_are_fixed_not_logo(self):
         self.assertIn('#EA002C', r.PUBLIC_SK_CI_CSS)
