@@ -1,0 +1,27 @@
+{
+  "platform": "Windows x64 CPython 3.13",
+  "checkedDate": "2026-11-03",
+  "packages": [
+    {
+      "name": "hypothesis",
+      "version": "6.170.14",
+      "requiresPython": ">=3.11",
+      "license": "MPL-2.0",
+      "filename": "hypothesis-6.170.14-cp313-cp313-win_amd64.whl",
+      "bytes": 690983,
+      "url": "https://files.pythonhosted.org/packages/7a/4f/47c060c96d077750c8a7b83b2e50b1add2050b391e77f49126828c125264/hypothesis-6.170.14-cp313-cp313-win_amd64.whl",
+      "sha256": "03831d833b161b9b7a32f0b607205293954f3a651196c80138804b9479845d71"
+    },
+    {
+      "name": "sortedcontainers",
+      "version": "2.4.0",
+      "requiresPython": "",
+      "dependencies": [],
+      "license": "Apache 2.0",
+      "filename": "sortedcontainers-2.4.0-py2.py3-none-any.whl",
+      "bytes": 29575,
+      "url": "https://files.pythonhosted.org/packages/32/46/9cb0e58b2deb7f82b84065f37f3bffeb12413f947f9388e4cac22c4621ce/sortedcontainers-2.4.0-py2.py3-none-any.whl",
+      "sha256": "a163dcaede0f1c021485e957a39245190e74249897e2ae4b2aa38595db237ee0"
+    }
+  ]
+}

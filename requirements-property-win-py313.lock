@@ -1,0 +1,4 @@
+# Optional synthetic property checks only. Windows CPython 3.13 x64 lock.
+# Reviewed official wheels; no extras, source builds or index resolution.
+hypothesis==6.170.14 --hash=sha256:03831d833b161b9b7a32f0b607205293954f3a651196c80138804b9479845d71
+sortedcontainers==2.4.0 --hash=sha256:a163dcaede0f1c021485e957a39245190e74249897e2ae4b2aa38595db237ee0

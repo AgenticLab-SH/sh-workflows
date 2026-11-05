@@ -151,3 +151,7 @@ python3 .cofa-workbench/kit/tools/workroom.py --root . note --agent coordinator 
 - 참고 폴더를 지우거나 원본 데이터를 삭제하는 자동 정리 기능은 없다.
 - 외부 AI 호출·Git Push·스크린샷·감독 설정 변경·실제 시험 데이터 외부 전송 기능은 없다.
 - 실제 Cofa 서비스 상태, 사용자 PC의 실제 경로, 오리지널 과제 파일은 이 공개 개발 과정에서 접근하지 않았다. 허용된 사용자가 직접 확인해야 한다.
+
+## 개발을 맡기고 끝까지 보완하기
+
+[개발 전 과정](DEVELOPMENT_LIFECYCLE.md)을 따른다. 기존 명세를 재사용하고 init이 추가하는 DEVELOPMENT_PLAN.md, MILESTONE_REVIEW.md, QUALITY_REVIEW.md, HANDOFF.md를 필요할 때 갱신한다. 기존 파일은 덮어쓰지 않는다. 여러 세션의 인계는 docs/handoffs/<세션>.md에 작성자를 나눠 둔다. 보고 화면은 문서 존재만 보여 주며 내용 완료를 보증하지 않는다.

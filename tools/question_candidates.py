@@ -286,4 +286,6 @@ def main(argv: list[str] | None = None) -> int:
 
 
 if __name__ == '__main__':
+    # CSV/JSON is consumed as UTF-8, including Windows redirected output.
+    sys.stdout.reconfigure(encoding='utf-8')
     sys.exit(main())

@@ -54,6 +54,13 @@ class WorkroomTests(unittest.TestCase):
         self.assertEqual((self.control/'docs'/'DECISIONS.md').read_text(),'my-existing-decision')
         self.assertEqual((self.root/'README.md').read_text(),original)
         self.assertEqual(w.snapshot_count(self.control),1)
+        handoff = self.control/'docs'/'HANDOFF.md'
+        self.assertTrue(handoff.is_file())
+        handoff.write_text('existing accepted handoff', encoding='utf-8')
+        second = w.init(self.root)
+        self.assertEqual(second['created_docs'], [])
+        self.assertEqual(handoff.read_text(encoding='utf-8'), 'existing accepted handoff')
+        self.assertEqual((self.root/'README.md').read_text(), original)
 
     def test_does_not_scan_parent(self):
         (self.root.parent/'SECRET.txt').write_text('OUTSIDE-DATA',encoding='utf-8')

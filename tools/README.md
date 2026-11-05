@@ -1,6 +1,6 @@
 # Local deterministic tools
 
-All commands are offline-first Python 3 standard library with no external model calls.
+Default commands are offline-first Python 3 standard library with no external model calls. The explicit optional Hypothesis extension uses only its reviewed local venv; see [adoption/install/rollback](../docs/OSS_ADOPTION.md).
 
 | Tool | Input | Output | Safety |
 | --- | --- | --- | --- |

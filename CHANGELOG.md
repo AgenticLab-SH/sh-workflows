@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.9.0 - 2026-11-05 (main; existing release ZIP unchanged)
+
+- Integrated unpublished local method/evidence/learner-explanation workflows, synthetic trace, UTF-8 CLI fix, optional locked property checks and original dependency licenses with the latest web-authored Workroom.
+- Added a preparation index, refreshed Notion coverage and linked all 14 existing research references without publishing private originals or claiming new paper validation.
+- Added an end-to-end development guide: stakeholder/data discovery, goals/spec/environment/plan, bounded delegation, session handoffs, milestone conversations, actual verification/root-cause repair, concrete code/architecture review and final operational handoff.
+- Workroom init creates missing DEVELOPMENT_PLAN, MILESTONE_REVIEW, QUALITY_REVIEW and HANDOFF records; existing documents and task source remain preserved. Connected startup and existing build/orchestration/handoff Skills.
+- Current integration checks and explicit NOT_RUN are recorded in docs/INTEGRATION_20261105.md. Earlier local-only entries below describe their original dates, not today's publication state.
+
 ## 0.8.0 - 2026-11-05 (main; release ZIP unchanged)
 
 - High-contrast Workroom 3000 UI: black text on light sidebar/panels, labeled L0–L4 levels, agent/status/level filters and visual evidence hierarchy. No change to independent service port 3001.
@@ -27,6 +35,20 @@
 - Real assessment questions/data, staff identities, private CSV records, authentication, screenshots, and exam solutions were not published. Local note files are explicitly not guaranteed to be excluded from submission.
 
 
+## Unreleased - 2026-11-03 (optional OSS, local installation)
+
+- Adopted Hypothesis 6.170.14 + sortedcontainers 2.4.0 for bounded synthetic generation and counterexample shrinking, without replacing the existing algorithms or stdlib-only mode.
+- Added `examples/method_trace.py --property-checks`, exact Windows CPython 3.13 x64 wheel hashes, an offline-by-default local-venv installer, original license notices and an adoption/install/rollback ledger in `docs/OSS_ADOPTION.md`.
+- Installed and read back both dependencies in two independent local venvs; 60 generated cases checked three properties and a shrunk greedy counterexample. Targeted integration 4, existing trace 3 and kit consistency 6 tests passed. Missing/wrong dependencies, observability, external-input options, socket/subprocess attempts and a corrupt wheel were rejected.
+- Full suite, other platforms, real assessment use and learner Q&A are NOT_RUN for this unit. No new push/release, global install or prior package regeneration.
+## Unreleased - 2026-11-02 (local preparation only)
+
+- Preserved the 41 Skills and existing research/defense additions; connected information gaps, single-fact questions, authored assumptions, formalization, baseline/method selection, implementation evidence and learner explanation.
+- Added a small synthetic budget-selection trace using existing `opt_kit.py` functions, a 10-row assumed question ledger, independent subset checks and a solo-practice starting prompt. No real stakeholder/user Q&A was performed.
+- Read official MIT OCW knapsack notes and Google OR-Tools documentation; recorded scope, sections, dates, adoption decisions and licenses in `docs/RESEARCH_METHODS.md`. No new paper, copied third-party code or dependency was adopted.
+- Fixed the existing question-candidate CLI's Windows redirected-output encoding to UTF-8, with a CP949 regression case.
+- Local Python 3.13.15 full suite: 172 tests OK after the encoding fix. Skill-creator validation could not run its checks because PyYAML is absent; existing kit structure/link checks passed. Detailed evidence and NOT_RUN are in `docs/METHOD_TRACE_VALIDATION.md`.
+- Local packages include Skill references and LICENSE; local source/archive receipts are separate from GitHub publication. No new push/release, installation, actual assessment use or learner-understanding claim.
 ## 0.5.0 - 2026-11-01 (main, local commits; release ZIP not regenerated)
 
 - Added general work patterns for time-boxed AI hackathon tasks. No task scenario, data, wording, scoring text or candidate information is included.

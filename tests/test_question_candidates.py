@@ -2,6 +2,7 @@
 import csv
 import io
 import json
+import os
 from pathlib import Path
 import subprocess
 import sys
@@ -69,6 +70,17 @@ class QuestionCandidatesTest(unittest.TestCase):
         ledger.write_text(out, encoding='utf-8')
         res = ql.lint(ql.load_ledger(ledger))
         self.assertTrue(res['passed'], res['issues'])
+
+    def test_cli_emits_utf8_under_legacy_windows_pipe_encoding(self):
+        # The parent decodes UTF-8; a CP949 child previously broke that contract.
+        env = {**os.environ, 'PYTHONIOENCODING': 'cp949'}
+        result = subprocess.run([sys.executable, '-B', str(TOOL), str(self.rooms)],
+                                capture_output=True, timeout=20, env=env)
+        self.assertEqual(result.returncode, 0, result.stderr)
+        text = result.stdout.decode('utf-8')
+        rows = list(csv.DictReader(io.StringIO(text)))
+        self.assertTrue(rows)
+        self.assertTrue(any('단위' in row['question'] for row in rows))
 
     def test_examples_zero_hides_values(self):
         res = self.build(refs=['bookings.csv:room=rooms.csv:room_id'], examples=0)

@@ -16,3 +16,5 @@
 
 - 모든 Skill·스크립트는 실제 평가의 최신 공식 규칙보다 우선하지 않는다. 감독 시험에서는 외부 AI, Git Push, 문제·코드·응시정보 외부 전송, 캡처·GUI 자동화, Codex 업데이트를 금지한다.
 - 준비용 공개 저장소는 2차 결과 통지 전까지 Public으로 유지한다.
+
+- For approved implementation, follow docs/DEVELOPMENT_LIFECYCLE.md: connect stakeholder/data evidence to goals, existing spec/environment/plan, bounded delegation and per-session handoffs; explain major milestones, reproduce failures, review concrete code/architecture issues and update the final operational handoff. Existing scope authorization carries through routine work; do not invent repeated approval gates.

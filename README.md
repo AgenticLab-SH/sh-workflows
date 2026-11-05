@@ -1,5 +1,9 @@
 # SH Workflows
 
+**준비 자료 전체 입구: [로컬·노션·웹 개선 통합 길잡이](docs/PREPARATION_INDEX.md)** · **[요구 이해→개발→단계별 보완→품질 검토→최종 인계](docs/DEVELOPMENT_LIFECYCLE.md)**
+
+최신 main에는 43개 Skill, 노션 18개 주제 연결, 로컬 방법·설명 연습과 선택형 반례 도구가 함께 있습니다. workroom.py init은 기존 파일을 보존하며 계획·주요 단계 검토·품질 검토·최종 인계 문서도 준비합니다. [이번 통합·검사 상태](docs/INTEGRATION_20261105.md)를 확인하세요.
+
 ## V3 · 고대비 보고 화면과 에이전트 기록 표준 (2026-11-05)
 
 **[자료 계층·색상·역할·보고 규약](docs/WORKROOM_REPORTING_STANDARD.md)**을 기본으로 사용합니다. **[안전한 작업공간 시작](docs/SAFE_WORKROOM_START.md)** 순서를 유지합니다.
@@ -318,6 +322,8 @@ AI와 함께 **문제 정의 → 구현 → 근거 확인 → 제출 → 직접 
 | 터미널 명령이 낯섦 | [명령표](docs/TERMINAL_CHEATSHEET.md) |
 | Skill을 어떻게 가져오는지 모름 | [가져오기·선택](docs/IMPORT_AND_SELECT_SKILLS.md) |
 | 공개 참고 키트가 제출에 섞일까 걱정됨 | [참고/제출 경계](docs/REFERENCE_SUBMISSION_BOUNDARY.md) |
+| 선택형 합성 반례 생성·축소를 설치해 연습 | [OSS 채택·로컬 설치·복구](docs/OSS_ADOPTION.md) |
+| 정보 공백→방법 선택→구현 근거→내 설명을 연결 | [합성 연결 연습과 혼자 시작하기](docs/METHOD_TO_EXPLANATION.md) |
 | 직접 문제를 풀며 연습하고 싶음 | [통합 모의 5종](docs/MOCK_EXAMS.md) · [짧은 훈련 6묶음](docs/PRACTICE_COFA.md) |
 | 마지막 설명을 준비함 | [후속 설명 연습](docs/NO_AI_REHEARSAL.md) — 실제 AI 금지 단계에서는 사용하지 않음 |
 | 다운로드가 필요함 | [릴리스](https://github.com/AgenticLab-SH/sh-workflows/releases) — 전체 소스·개별 Skill ZIP |
@@ -372,6 +378,6 @@ Python 3.10+가 이미 제공될 때 표준 라이브러리만 사용합니다. 
 - 준비 자료 작성·패키징·GitHub 게시와 실제 학습·체험·시험 환경 작동은 별개입니다.
 - 과거 대화의 18/18·25/25 통과 주장이나 원 Git 커밋은 이 복원본의 검증 결과가 아닙니다. [RECOVERY.md](RECOVERY.md)를 참고합니다.
 
-**릴리스 참고:** v0.4.0 ZIP은 36개 Skill 기준입니다. [v0.5.0 릴리스](https://github.com/AgenticLab-SH/sh-workflows/releases/tag/v0.5.0)에 전체 소스 ZIP, 41개 개별 Skill ZIP과 그 묶음, SHA256SUMS.txt를 게시했습니다. 이후 main에 더해진 변경은 릴리스 ZIP에 없으니 최신 내용은 main을 사용하세요. 개별 Skill ZIP은 루트에 SKILL.md와 agents/openai.yaml만 담고, 다른 문서를 참조하는 줄은 전체 소스가 있을 때만 쓰입니다.
+**릴리스 참고:** v0.4.0 ZIP은 36개 Skill 기준입니다. [v0.5.0 릴리스](https://github.com/AgenticLab-SH/sh-workflows/releases/tag/v0.5.0)에 전체 소스 ZIP, 41개 개별 Skill ZIP과 그 묶음, SHA256SUMS.txt를 게시했습니다. 이후 main에 더해진 변경은 릴리스 ZIP에 없으니 최신 내용은 main을 사용하세요. 게시된 v0.5.0 개별 Skill ZIP은 루트에 SKILL.md와 agents/openai.yaml만 담고, 다른 문서를 참조하는 줄은 전체 소스가 있을 때만 쓰입니다. 이후 로컬 보강 패키지의 references 포함 범위와 미게시 상태는 [패키지 안내](docs/INSTALL_AND_PUBLISH.md)를 참고하세요.
 
 MIT License. SK하이닉스·크래프톤·Cofa·OpenAI가 보증하거나 운영하는 저장소가 아닙니다.

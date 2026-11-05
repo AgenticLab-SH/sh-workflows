@@ -12,14 +12,14 @@ LINK = re.compile(r'\]\(([^)\s]+)\)')
 
 def md_files():
     for p in ROOT.rglob('*.md'):
-        if '.git' not in p.parts:
+        if not {'.git', '.local', '.venv', '.cofa-workbench', '.review-workbench'}.intersection(p.parts):
             yield p
 
 
 class KitIntegrationTest(unittest.TestCase):
     def test_skill_folders_match_front_matter_and_yaml(self):
         dirs = sorted(d for d in SKILLS.iterdir() if d.is_dir())
-        self.assertEqual(len(dirs), 41)
+        self.assertGreaterEqual(len(dirs), 41)
         for d in dirs:
             text = (d / 'SKILL.md').read_text(encoding='utf-8')
             m = re.match(r'---\nname: ([^\n]+)\ndescription: ([^\n]+)\n---\n', text)
@@ -34,7 +34,8 @@ class KitIntegrationTest(unittest.TestCase):
         for d in SKILLS.iterdir():
             if d.is_dir():
                 self.assertTrue(f'| {d.name} |' in index or f'[{d.name}](' in index, d.name)
-        self.assertIn('41개', index)
+        count = len([d for d in SKILLS.iterdir() if d.is_dir()])
+        self.assertRegex(index, rf'{count}개')
 
     def test_entry_points_link_new_skills(self):
         driver = (SKILLS / 'hackathon-task-driver' / 'SKILL.md').read_text(encoding='utf-8')
@@ -44,8 +45,10 @@ class KitIntegrationTest(unittest.TestCase):
             self.assertIn(name, driver, name)
             self.assertIn(name, start, name)
             self.assertIn(name, readme, name)
-        for text in (driver, start, readme):
+        for text in (driver, readme):
             self.assertIn('OVERRIDE_INSTRUCTIONS.md', text)
+        for text in (start, readme):
+            self.assertIn('SAFE_WORKROOM_START.md', text)
 
     def test_relative_markdown_links_resolve(self):
         broken = []

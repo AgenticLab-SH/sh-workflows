@@ -15,6 +15,9 @@ description: Design normal, boundary, negative, security, and regression tests f
 ## Concrete use
 Input: README and business rules. Output: compact executable-oriented test matrix with clear coverage limits.
 
+## 선택형 합성 반례 탐색
+전체 키트가 있고 설치·검사가 허용된 사전 준비 환경에서는 [OSS 반례 연습](../../../docs/OSS_ADOPTION.md)을 선택한다. 기존 xamples/method_trace.py --property-checks가 생성 입력과 축소 반례를 요구/가정 ID·함수·실제 관측에 연결한다. 기본 unittest 흐름을 교체하지 않으며, 의존성이 없으면 몰래 설치하지 않는다. 반례를 전역 최소나 학습 완료로 부르지 않는다. 개별 Skill만 있으면 기존 검사 설계를 그대로 쓴다.
+
 ## Checks and boundaries
 - Follow the actual task, authorized inputs and current host policy.
 - Keep observations, assumptions and unexecuted checks separate.
