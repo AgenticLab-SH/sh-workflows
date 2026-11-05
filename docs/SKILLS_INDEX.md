@@ -1,6 +1,6 @@
 # 해커톤 시작 Skill
 
-41개 중 먼저 hackathon-task-driver를 읽고, 현재 과제에 필요한 아래 Skill 1~2개만 추가로 선택합니다. 기존 35개 Skill은 보존했습니다.
+42개 중 먼저 hackathon-task-driver를 읽고, 현재 과제에 필요한 아래 Skill 1~2개만 추가로 선택합니다. 기존 35개 Skill은 보존했습니다.
 
 | Skill | 용도 |
 | --- | --- |
@@ -9,6 +9,7 @@
 | [stakeholder-agent-questioning](../.agents/skills/stakeholder-agent-questioning/SKILL.md) | 구체 질문에만 답하는 담당자에게 애매·경계·예외를 한 사실짜리 질문으로 묻고 복사용 멘트·원장 관리 |
 | [role-separated-design](../.agents/skills/role-separated-design/SKILL.md) | 이용자/운영자 등 역할별 화면·데이터·권한·흐름 분리 |
 | [optimization-modeling](../.agents/skills/optimization-modeling/SKILL.md) | 데이터 정제→정식화→기준선→개선→소규모 정확해 비교 |
+| [explainable-workbench](../.agents/skills/explainable-workbench/SKILL.md) | 여러 Codex의 누적 작업 보고, 설계 대안·의사결정·검증 근거와 로컬 두 탭 대시보드 |
 | [cost-aware-execution](../.agents/skills/cost-aware-execution/SKILL.md) | 필수 검증을 지키면서 토큰·호출·재시도 비용을 줄이고 기록 |
 
 오버라이드 지침(작업 방식 고정)은 Skill이 아니라 [운영서](OVERRIDE_INSTRUCTIONS.md)와 템플릿으로 제공합니다.
@@ -30,6 +31,7 @@ Select one or two relevant skills; current host rules take priority.
 | cost-aware-execution | Keep token, call, retry and run-time cost low during agent-assisted work without cutting required checks; use when cost may be evaluated even if usage is unlimited. |
 | data-analysis | Analyze small datasets with grounded aggregations and reproducible reasoning; use for business metrics, comparisons, descriptive statistics, and decision support. |
 | data-profiling | Profile CSV and JSON data for schema, duplicates, missingness, type errors, and unit consistency before analytics or automation. |
+| explainable-workbench | Maintain a local append-only explanation and evidence history across agent workers, with a read-only reports/results viewer. |
 | debugging-verification | Reproduce and fix code, data, or workflow failures with minimal patches and regression testing; use when outputs conflict with requirements. |
 | decision-analysis | Compare technical or business options with a transparent decision matrix, explicit tradeoffs, and measurable acceptance criteria. |
 | document-rule-reconciliation | Compare multiple versions of rules or documents and detect precedence conflicts; use for application review, policy comparison, and consistency checks. |

@@ -4,6 +4,7 @@
 - A cloned public toolkit is reference-only; a hidden `.hackathon-kit` folder is not guaranteed to be excluded from official submissions. Inspect and confirm the official preview, preserve task files, and never silently delete reference contents.
 - Begin a time-boxed hackathon with .agents/skills/hackathon-task-driver/SKILL.md. Load only task-relevant additional skills.
 - The participant owns problem definition, business decisions, scope and final explanation; the provided coding agent owns only the delegated implementation.
+- When the participant needs to understand concurrent agent output, optionally load explainable-workbench; keep separate append-only local decision/test evidence with a single writer per source file. Do not auto-start a server or copy exam data to this repo.
 - Separate stakeholder questions, implementation requests, platform help, and incident reporting. Keep requirements, assumptions, decisions, and actual execution evidence distinct.
 - Prefer one writer and the provided runtime. Goals, subagents, plugins and MCP are optional only if supported and allowed. Do not activate hidden features or upgrade the agent.
 - Follow the current host/model policy for checks. Never execute or delegate prohibited validation. Record omitted checks as NOT_RUN.

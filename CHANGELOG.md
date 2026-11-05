@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.6.0 - 2026-11-05 (main only, no release ZIP update)
+
+- Added explainable-workbench Skill (41 -> 42) and a local-only append-only two-tab report/results viewer, plus a human decision/architecture verification guide and a small evidence-card template.
+- One independent local event file per agent, local-only HTTP read endpoints, optional loopback app preview, and fixed public SK CI accent used only as an opt-in visual theme (not an official internal UI library).
+- New synthetic-only unit tests: 11 passed with Python 3.13.5; all existing repository tests and browser rendering in the owner's/Cofa environment remain NOT_RUN. Separate container Chromium screenshot QA was BLOCKED_BY_ADMINISTRATOR and was not bypassed.
+- Real assessment questions/data, staff identities, private CSV records, authentication, screenshots, and exam solutions were not published. Local note files are explicitly not guaranteed to be excluded from submission.
+
+
 ## 0.5.0 - 2026-11-01 (main, local commits; release ZIP not regenerated)
 
 - Added general work patterns for time-boxed AI hackathon tasks. No task scenario, data, wording, scoring text or candidate information is included.

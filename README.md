@@ -15,6 +15,15 @@ Codex가 이미 받은 내용을 다시 묻지 않고, 실제 규칙·파일·�
 키트 전체를 읽거나 원본 지침을 덮어쓰는 방식이 아닙니다. 아래의 개별 첫 지시는 이 시작 파일을 못 읽을 때의 대안입니다.
 이 파일이 없는 이전 Clone을 사용 중이면 자동으로 갱신되지 않습니다. 업데이트는 해당 환경의 공식 공개자료 반입 규칙을 따릅니다.
 
+## 여러 Codex 작업을 이해하고 검증하는 새 경로
+
+**[Explainable Workbench](docs/REPORT_WORKBENCH.md)**: 작업별 이유·대안·실제 검사·남은 한계가 누적되는 로컬 보고 화면. 두 탭(보고/판단, 결과/검증), 에이전트별 상태 필터와 독립 기록을 제공한다. 실제 과제와 평가자료를 GitHub에 올리는 기능은 없다.
+
+- **먼저 이해:** [Human-led decision workflow](docs/HUMAN_DECISION_WORKFLOW.md) · [선택 근거 카드](templates/DECISION_EXPLANATION.md)
+- **선택 Skill:** [explainable-workbench](.agents/skills/explainable-workbench/SKILL.md) — 설명이 어렵거나 여러 Codex가 병렬 작업할 때만 읽기
+- **로컬 실행:** `python3 .hackathon-kit/tools/report_workbench.py --root . serve --port 8765` (사용 환경에서 허용한 경우만)
+- **주의:** 파일 기록을 만드는 것은 명시적 `note` 명령뿐이다. 보고 내용은 안전하게 요약하고, 실제 Browser/제출 검증은 사용자가 한다. 프레임 미리보기는 Cofa 등 관리형 IDE에서 정상 작동한다고 보장하지 않는다.
+
 ## 고도화 경로: 다음 회차 빠른 경로
 
 여러 AI 해커톤 형식에 공통으로 쓸 수 있는 작업 패턴을 정리했습니다. 특정 과제의 내용·데이터·평가 기준은 이 저장소에 없습니다. 공식 규칙이 항상 우선합니다.
@@ -25,6 +34,7 @@ Codex가 이미 받은 내용을 다시 묻지 않고, 실제 규칙·파일·�
 | 담당자가 구체적인 질문에만 답함 | [stakeholder-agent-questioning](.agents/skills/stakeholder-agent-questioning/SKILL.md) · [멘트 템플릿](templates/QUESTION_MESSAGES.md) · [질문 원장](templates/QUESTION_LEDGER.csv) | 애매·경계·예외·차이를 한 사실짜리 질문으로 바꾼다(결과를 바꾸지 않는 질문은 빼고 P3는 가정으로 기록). 멘트는 Codex가 쓰고 나는 검토·복사·전송만 한다 |
 | 이용자와 운영자를 나눠야 함 | [role-separated-design](.agents/skills/role-separated-design/SKILL.md) · [역할 분리 패턴](docs/ROLE_SEPARATION.md) · [역할 매트릭스](templates/ROLE_MATRIX.md) | 역할별 화면·데이터·권한·흐름을 나누고 권한은 처리 함수에서 강제한다 |
 | 데이터를 가공하고 최적화 알고리즘을 골라야 함 | [optimization-modeling](.agents/skills/optimization-modeling/SKILL.md) · [최적화 운영서](docs/OPTIMIZATION_PLAYBOOK.md) · `tools/opt_kit.py` | 정제 로그→정식화 카드→기준선→개선→소규모 정확해 비교. 표준 라이브러리만으로 가능 |
+| 여러 Codex의 판단·변경·테스트를 누적해서 설명해야 함 | [explainable-workbench](.agents/skills/explainable-workbench/SKILL.md) · [로컬 대시보드](docs/REPORT_WORKBENCH.md) | 1파일 1작성자, 각 에이전트가 이유·대안·근거를 별도 이벤트로 기록해 두 탭에서 확인. 실제 과제/응시자료 외부 업로드 없음 |
 | 한도는 없지만 비용이 평가될 수 있음 | [cost-aware-execution](.agents/skills/cost-aware-execution/SKILL.md) · [비용 운영서](docs/COST_OPTIMIZATION.md) · [비용 기록](templates/COST_LOG.md) | 필요한 파일·Skill만 읽고 같은 실패를 반복하지 않는다. 필수 검증은 줄이지 않는다 |
 | 위 요소를 미리 연습 | [합성 모의 D: 문화센터 강좌 배정](exercises/session-allocation/BRIEF.md) · [합성 모의 E: 기부 물품 보관 상자 정리](exercises/donation-packing/BRIEF.md) | 진행자가 역할 카드로 구체 질문에만 답한다. D는 배정·역할 분리, E는 적재·묶음과 하한 비교 |
 

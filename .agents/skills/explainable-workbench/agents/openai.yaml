@@ -1,0 +1,4 @@
+interface:
+  display_name: Explainable Workbench
+  short_description: Human decisions, multi-agent reports and verifiable results
+  default_prompt: Use $explainable-workbench to keep an auditable local decision and evidence trail while developing a small workflow.

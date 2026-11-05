@@ -5,3 +5,6 @@ __pycache__/
 .env
 .local/
 *.egg-info/
+
+# Local-only workbench event summaries; not for publishing
+.review-workbench/
